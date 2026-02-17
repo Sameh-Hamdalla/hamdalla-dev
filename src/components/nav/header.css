@@ -99,3 +99,9 @@
   background: #1f2937;
   transform: translateY(-1px);
 }
+
+.logo-img{
+  height: 40px;
+  width: auto;
+  display: block;
+}

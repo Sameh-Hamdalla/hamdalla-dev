@@ -1,5 +1,8 @@
 import React from "react";
 import "./header.css";
+import logo from "../../assets/logo.png";
+
+
 
 const Header: React.FC = () => {
   return (
@@ -10,8 +13,8 @@ const Header: React.FC = () => {
 
           {/* Logo */}
           <div className="logo-group">
-            <div className="logo-icon">D</div>
-            <span className="logo-text">DevFlow</span>
+            <img src={logo} alt="Hamdalla Dev Logo" className="logo-img" />
+            <span className="logo-text">Hamdalla Dev</span>
           </div>
 
           {/* Navigation */}

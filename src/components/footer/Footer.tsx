@@ -11,8 +11,8 @@ const Footer: React.FC = () => {
 
           {/* Logo */}
           <div className="footer-logo">
-            <div className="footer-logo-icon">H</div>
-            <span className="footer-logo-text">DevFlow</span>
+            <div className="footer-logo-icon">HD</div>
+            <span className="footer-logo-text">HAMDALLA-DEV</span>
           </div>
 
           {/* Links */}
