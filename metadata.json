@@ -1,0 +1,8 @@
+
+{
+  "name": "DevFlow - Software Solutions for SMEs",
+  "description": "A premium landing page for a software developer specializing in digitalizing small businesses and local retailers. Features an AI-powered project consultant.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
