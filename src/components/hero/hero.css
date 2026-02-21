@@ -1,160 +1,300 @@
-/* ===== Section ===== */
+/* ============================= */
+/* ===== HERO SECTION ===== */
+/* ============================= */
+
 .hero {
-  position: relative;
-  background: white;
-  padding: 80px 24px 140px;
-  overflow: hidden;
+  position: relative; 
+  /* Macht die Section zum Referenzpunkt 
+     für absolute Elemente (z.B. Glow oder Status-Card) */
+
+  background: white; 
+  /* Weißer Hintergrund */
+
+  padding: 80px 24px 140px; 
+  /* Innenabstand:
+     80px oben
+     24px links/rechts
+     140px unten (Platz für Status-Card) */
+
+  overflow: hidden; 
+  /* Verhindert, dass der Glow-Effekt außerhalb sichtbar wird */
 }
 
-/* ===== Container ===== */
+
+/* ============================= */
+/* ===== CONTAINER ===== */
+/* ============================= */
+
 .hero-container {
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 1280px; 
+  /* Maximale Breite → Inhalt wird nicht zu breit */
+
+  margin: 0 auto; 
+  /* Zentriert den Container horizontal */
 }
 
-/* ===== Grid ===== */
+
+/* ============================= */
+/* ===== GRID LAYOUT ===== */
+/* ============================= */
+
 .hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
+  display: grid; 
+  /* Aktiviert CSS Grid */
+
+  grid-template-columns: 1fr 1fr; 
+  /* Zwei gleich große Spalten */
+
+  gap: 64px; 
+  /* Abstand zwischen linker und rechter Spalte */
+
+  align-items: center; 
+  /* Vertikale Zentrierung beider Spalten */
 }
 
-/* ===== Left ===== */
+
+/* ============================= */
+/* ===== LEFT SIDE ===== */
+/* ============================= */
 
 .hero-badge {
-  display: inline-block;
-  background: #eef2ff;
-  color: #4338ca;
+  display: inline-block; 
+  /* Nimmt nur so viel Platz wie nötig */
 
-  padding: 6px 14px;
-  border-radius: 999px;
+  background: #eef2ff; 
+  /* Hellblauer Hintergrund */
 
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 24px;
+  color: #4338ca; 
+  /* Dunkelblaue Schrift */
+
+  padding: 6px 14px; 
+  /* Innenabstand */
+
+  border-radius: 999px; 
+  /* Vollständig abgerundet (Pill-Form) */
+
+  font-size: 14px; 
+  font-weight: 700; 
+  /* Fette Schrift */
+
+  margin-bottom: 24px; 
+  /* Abstand nach unten */
 }
+
 
 .hero-title {
-  font-size: 56px;
-  font-weight: 800;
-  line-height: 1.1;
-  color: #0f172a;
-  margin-bottom: 24px;
+  font-size: 50px; 
+  /* Große Überschrift */
+
+  font-weight: 800; 
+  /* Extra fett */
+
+  line-height: 1.1; 
+  /* Enger Zeilenabstand */
+
+  color: #0f172a; 
+  /* Dunkle Schriftfarbe */
+
+  margin-bottom: 24px; 
+  /* Abstand nach unten */
 }
+
 
 .accent {
-  color: #4f46e5;
+  color: #4f46e5; 
+  /* Hebt einzelne Wörter farblich hervor */
 }
+
 
 .hero-text {
-  font-size: 20px;
-  color: #475569;
-  line-height: 1.6;
-  max-width: 560px;
-  margin-bottom: 36px;
+  font-size: 20px; 
+  /* Größerer Fließtext */
+
+  color: #475569; 
+  /* Grau-blauer Text */
+
+  line-height: 1.6; 
+  /* Mehr Zeilenabstand = bessere Lesbarkeit */
+
+  max-width: 560px; 
+  /* Text wird nicht zu breit */
+
+  margin-bottom: 36px; 
 }
 
-/* ===== Buttons ===== */
+
+/* ============================= */
+/* ===== BUTTONS ===== */
+/* ============================= */
 
 .hero-buttons {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
+  display: flex; 
+  /* Buttons nebeneinander */
+
+  gap: 16px; 
+  /* Abstand zwischen Buttons */
+
+  flex-wrap: wrap; 
+  /* Auf kleinen Bildschirmen umbrechen */
 }
 
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 
-  padding: 16px 28px;
+.btn-primary {
+  display: inline-flex; 
+  /* Flex nur für dieses Element */
+
+  align-items: center; 
+  justify-content: center; 
+  /* Text im Button zentrieren */
+
+  padding: 16px 28px; 
   border-radius: 16px;
 
-  background: #4f46e5;
+  background: #4f46e5; 
   color: white;
 
-  font-weight: 700;
+  font-weight: 700; 
   text-decoration: none;
 
-  box-shadow: 0 16px 40px rgba(79,70,229,0.35);
-  transition: all 0.2s ease;
+  box-shadow: 0 16px 40px rgba(79,70,229,0.35); 
+  /* Lila Schatten */
+
+  transition: all 0.2s ease; 
+  /* Smooth Animation */
 }
 
 .btn-primary:hover {
-  background: #4338ca;
-  transform: translateY(-2px);
+  background: #4338ca; 
+  /* Dunklere Farbe */
+
+  transform: translateY(-2px); 
+  /* Leichte Bewegung nach oben */
 }
 
+
 .btn-secondary {
-  padding: 16px 28px;
+  padding: 16px 28px; 
   border-radius: 16px;
 
-  background: white;
+  background: white; 
   color: #0f172a;
 
-  border: 1px solid #e2e8f0;
-  font-weight: 700;
+  border: 1px solid #e2e8f0; 
+  /* Dünner Rahmen */
+
+  font-weight: 700; 
   cursor: pointer;
 
-  transition: all 0.2s ease;
+  transition: all 0.2s ease; 
 }
 
 .btn-secondary:hover {
-  background: #f8fafc;
+  background: #f8fafc; 
+  /* Helle Hover-Farbe */
 }
 
-/* ===== Right ===== */
+
+/* ============================= */
+/* ===== RIGHT SIDE ===== */
+/* ============================= */
 
 .hero-right {
-  position: relative;
+  position: relative; 
+  /* Referenzpunkt für absolute Elemente */
+
+  display: grid; 
+  place-items: center; 
+  /* Bild horizontal + vertikal zentriert */
 }
 
-/* glow */
+
+/* ===== Glow Effekt ===== */
+
 .hero-glow {
-  position: absolute;
-  inset: -30px;
-  background: rgba(99,102,241,0.15);
-  border-radius: 50%;
-  filter: blur(60px);
+  position: absolute; 
+  /* Frei positioniert */
+
+  inset: -30px; 
+  /* Abstand zu allen Seiten */
+
+  background: rgba(99,102,241,0.15); 
+  /* Transparenter Lila-Effekt */
+
+  border-radius: 50%; 
+  /* Rund */
+
+  filter: blur(60px); 
+  /* Weichzeichnen */
 }
 
-/* image */
+
+/* ===== Bild ===== */
+
 .hero-image {
-  position: relative;
-  width: 100%;
-  border-radius: 24px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
-  border: 1px solid white;
+  position: relative; 
+  /* Liegt über dem Glow */
+
+  width: 50%; 
+  /* Hälfte der Spaltenbreite */
+
+  border-radius: 24px; 
+  /* Abgerundete Ecken */
+
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25); 
+  /* Tiefer Schatten */
+
+  border: 1px solid white; 
 }
 
-/* status card */
-.hero-status {
-  position: absolute;
-  bottom: -30px;
-  left: -30px;
 
-  background: white;
-  padding: 18px 22px;
+/* ===== Status Card ===== */
+
+.hero-status {
+  position: absolute; 
+  /* Frei positioniert */
+
+  bottom: -60px; 
+  /* 60px unterhalb des Bildes */
+
+  left: -30px; 
+  /* 30px nach links verschoben */
+
+  background: white; 
+  padding: 18px 22px; 
   border-radius: 16px;
 
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  font-size: 14px;
-  font-weight: 600;
+
+  font-size: 14px; 
+  font-weight: 600; 
   color: #475569;
 
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display: flex; 
+  /* Punkt + Text nebeneinander */
+
+  align-items: center; 
+  /* Vertikal zentriert */
+
+  gap: 10px; 
+  /* Abstand zwischen Punkt und Text */
 }
 
-/* green dot */
+
+/* ===== Grüner Punkt ===== */
+
 .status-dot {
-  width: 10px;
-  height: 10px;
-  background: #10b981;
-  border-radius: 50%;
-  animation: pulse 1.6s infinite;
+  width: 10px; 
+  height: 10px; 
+  /* Quadrat */
+
+  background: #10b981; 
+  /* Grün */
+
+  border-radius: 50%; 
+  /* Rund */
+
+  animation: pulse 1.6s infinite; 
+  /* Pulsierende Animation */
 }
 
 @keyframes pulse {

@@ -1,10 +1,15 @@
 import React from "react";
 import "./hero.css";
+import samehBild from "../../assets/samehBild.jpg";
+
+// Diese Komponente bekommt eine Funktion von einer anderen Komponente und darf sie ausführen.
+// interface ist eine Beschreibung, welche Daten erlaubt sind.
 
 interface HeroProps {
   onOpenConsultant: () => void;
 }
 
+// FC => Function Component, Hero darf nur Probs bekommen, die in HeroProps stehen
 const Hero: React.FC<HeroProps> = ({ onOpenConsultant }) => {
   return (
     <section className="hero">
@@ -54,8 +59,8 @@ const Hero: React.FC<HeroProps> = ({ onOpenConsultant }) => {
             <div className="hero-glow"></div>
 
             <img
-              src="https://picsum.photos/seed/software/800/600"
-              alt="Moderne Softwareentwicklung"
+              src={samehBild}
+              alt="Bild Sameh Hamdalla"
               className="hero-image"
             />
 
