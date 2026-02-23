@@ -74,8 +74,10 @@
 .portfolio-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.5s ease;
+  border-radius: 15px;
+  
 }
 
 /* zoom on hover */
@@ -133,4 +135,57 @@
 .portfolio-text p {
   color: #64748b;
   font-size: 15px;
+}
+/* ============================= */
+/* ===== MOBILE ===== */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .portfolio {
+    padding: 80px 20px;
+  }
+
+  .portfolio-head {
+    margin-bottom: 48px;
+  }
+
+  .portfolio-title {
+    font-size: 30px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* 1 Spalte */
+    gap: 32px;
+  }
+
+  .portfolio-text h4 {
+    font-size: 20px;
+  }
+
+  .portfolio-text p {
+    font-size: 14px;
+  }
+
+}
+
+/* ============================= */
+/* ===== TABLET ===== */
+/* ============================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .portfolio {
+    padding: 100px 32px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+    gap: 32px;
+  }
+
+  .portfolio-title {
+    font-size: 34px;
+  }
+
 }

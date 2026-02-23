@@ -198,3 +198,47 @@
   display: block; 
   /* Entfernt kleinen unteren Abstand bei Bildern */
 }
+
+/* ============================= */
+/* ===== MOBILE NAV ===== */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .header-inner {
+    height: 70px;
+  }
+
+  .logo-text {
+    font-size: 20px;
+  }
+
+  .nav {
+    display: none; /* Navigation ausblenden */
+  }
+
+  .cta-btn {
+    display: none; /* CTA Button ausblenden */
+  }
+
+}
+
+/* ============================= */
+/* ===== TABLET NAV ===== */
+/* ============================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .header-container {
+    padding: 0 32px;
+  }
+
+  .nav {
+    gap: 24px;
+  }
+
+  .logo-text {
+    font-size: 22px;
+  }
+
+}

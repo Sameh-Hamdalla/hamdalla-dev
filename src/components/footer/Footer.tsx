@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
 
           {/* Copyright */}
           <p className="footer-copy">
-            &copy; {new Date().getFullYear()} DevFlow Softwarelösungen.
+            &copy; {new Date().getFullYear()} Hamdalla Dev Softwarelösungen.
             Alle Rechte vorbehalten.
           </p>
 

@@ -101,3 +101,61 @@
   line-height: 1.6;
   font-size: 15px;
 }
+/* ============================= */
+/* ===== MOBILE ===== */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .services {
+    padding: 80px 20px;
+  }
+
+  .services-head {
+    margin-bottom: 50px;
+  }
+
+  .services-title {
+    font-size: 30px;
+  }
+
+  .services-sub {
+    font-size: 16px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr; /* 1 Spalte */
+    gap: 24px;
+  }
+
+  .service-card {
+    padding: 28px;
+  }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+
+}
+/* ============================= */
+/* ===== TABLET ===== */
+/* ============================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .services {
+    padding: 100px 32px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+    gap: 24px;
+  }
+
+  .services-title {
+    font-size: 34px;
+  }
+
+}

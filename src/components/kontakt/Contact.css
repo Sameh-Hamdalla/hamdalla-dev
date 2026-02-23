@@ -88,10 +88,36 @@
 
   font-size: 22px;
 }
-
+.whatsapp-link{
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 8px;
+  font-size: 14px;
+  opacity: 0.9;
+  text-decoration: none;
+}
+.whatsapp-link:hover {
+  opacity: 1;
+}
 .info-label {
   color: #94a3b8;
   font-size: 14px;
+}
+.contact-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.whatsapp-link img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-link img:hover {
+  transform: scale(1.1);
 }
 
 .info-value {
@@ -170,4 +196,53 @@ textarea:focus {
 .submit-btn:hover {
   background: #4f46e5;
   transform: translateY(-1px);
+}
+
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+
+  .contact {
+    padding: 80px 20px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr; /* eine Spalte */
+    gap: 48px;
+  }
+
+  .contact-title {
+    font-size: 32px;
+  }
+
+  .contact-desc {
+    font-size: 16px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr; /* Name + Email untereinander */
+  }
+
+  .contact-card {
+    padding: 28px;
+    border-radius: 20px;
+  }
+
+}
+
+/* ===== Tablet ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .contact {
+    padding: 100px 40px;
+  }
+
+  .contact-grid {
+    gap: 48px;
+  }
+
+  .contact-title {
+    font-size: 38px;
+  }
+
 }
