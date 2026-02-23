@@ -53,6 +53,7 @@
 
   height: 80px; 
   /* Höhe des Headers */
+    position: relative; /* wichtig */
 }
 
 
@@ -200,6 +201,53 @@
 }
 
 /* ============================= */
+/* ===== BURGER BUTTON ===== */
+/* ============================= */
+
+.burger {
+  display: none; /* Standard: versteckt */
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+/* ============================= */
+/* ===== MOBILE MENU ===== */
+/* ============================= */
+
+.mobile-menu {
+  position: absolute;
+  top: 70px;   /* unter dem Header */
+  right: 24px; /* rechts ausrichten */
+
+  width: 220px;
+  background: white;
+  border-radius: 16px;
+
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.mobile-cta {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #4f46e5;
+  color: white !important;
+  text-align: center;
+}
+
+/* ============================= */
 /* ===== MOBILE NAV ===== */
 /* ============================= */
 
@@ -219,6 +267,9 @@
 
   .cta-btn {
     display: none; /* CTA Button ausblenden */
+  }
+  .burger {
+    display: block; /* Burger erscheint */
   }
 
 }
