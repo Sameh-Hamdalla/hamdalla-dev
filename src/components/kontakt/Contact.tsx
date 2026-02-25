@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import "./Contact.css";
-import wa from "../../assets/wa.png";
 import emailjs from "@emailjs/browser";
 
 /**
