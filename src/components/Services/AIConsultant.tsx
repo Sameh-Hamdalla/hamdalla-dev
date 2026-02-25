@@ -12,7 +12,7 @@ const AIConsultant: React.FC<Props> = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: "assistant",
-      content: "Hallo! Ich bin Ihr KI-Berater von DevFlow."
+      content: "Hallo! Ich bin Ihr KI-Berater von Hamdalla Dev."
     }
   ]);
 
