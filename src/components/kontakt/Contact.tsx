@@ -143,7 +143,7 @@ const Contact: React.FC = () => {
                   <div className="info-value">
                     {/* mailto öffnet nur das Mailprogramm */}
                     <a href="mailto:sa_mh87@outlook.de">
-                      sa_mh87@outlook.de
+                      samehhamdalla87@gmail.com
                     </a>
                   </div>
                 </div>
