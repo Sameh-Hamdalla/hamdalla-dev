@@ -1,56 +1,137 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Contact.css";
 import wa from "../../assets/wa.png";
+import emailjs from "@emailjs/browser";
 
 /**
  * Contact Component
- * 
- * Displays the contact section of the website.
- * 
- * Features:
- * - Introductory contact text
- * - Email contact information
- * - Location information
- * - Contact form for user inquiries
- * 
- * This component is part of the landing page and
- * allows potential clients to get in touch.
+ *
+ * Diese Komponente zeigt:
+ * - Kontaktinformationen (links)
+ * - Ein Kontaktformular (rechts)
+ *
+ * Ziel:
+ * Wenn das Formular abgeschickt wird,
+ * soll EmailJS eine E-Mail versenden – ohne Backend.
  */
 const Contact: React.FC = () => {
-  return (
+
+  /**
+   * formRef ist eine Referenz auf das echte HTML-Formular.
+   *
+   * Warum brauchen wir das?
+   * EmailJS benötigt das echte <form>-Element,
+   * um alle Felder mit name="..." auszulesen.
+   *
+   * HTMLFormElement | null bedeutet:
+   * - Es wird ein echtes <form> sein
+   * - Am Anfang ist es noch null (bevor React gerendert hat)
+   */
+  const formRef = useRef<HTMLFormElement | null>(null);
+
+
+  /**
+   * Diese Funktion wird aufgerufen,
+   * wenn das Formular abgeschickt wird.
+   *
+   * e = Event-Objekt vom Formular
+   */
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+
     /**
-     * Main contact section wrapper.
-     * Contains both informational text and contact form.
+     * Verhindert das Standard-Verhalten des Formulars.
+     *
+     * Normalerweise würde:
+     * - die Seite neu laden
+     * - oder ein Redirect passieren
+     *
+     * Das wollen wir NICHT.
+     */
+    e.preventDefault();
+
+    /**
+     * Sicherheitscheck:
+     * Falls das Formular noch nicht existiert,
+     * beenden wir die Funktion sofort.
+     */
+    if (!formRef.current) return;
+
+
+    /**
+     * Jetzt senden wir die Daten an EmailJS.
+     *
+     * sendForm() liest automatisch:
+     * - alle Felder mit name="..."
+     * - erstellt daraus ein Objekt
+     * - füllt das Template
+     * - sendet die E-Mail
+     */
+    emailjs
+      .sendForm(
+        "service_8l5sbx5",       // Meine Service ID (Gmail-Verbindung)
+        "template_pg0whwh",      // Meine Template ID (E-Mail Vorlage)
+        formRef.current,         // Das echte <form>-Element
+        "xs4NNYHVqLoEiUXeY"       //Meine Public Key (Projekt-Schlüssel)
+      )
+
+      /**
+       * .then() läuft, wenn alles erfolgreich war.
+       */
+      .then(() => {
+        alert("✅ Nachricht wurde gesendet!");
+
+        /**
+         * reset() leert alle Eingabefelder.
+         */
+        formRef.current?.reset();
+      })
+
+      /**
+       * .catch() läuft, wenn ein Fehler passiert ist.
+       * Zum Beispiel:
+       * - falsche IDs
+       * - kein Internet
+       * - Template falsch
+       */
+      .catch((err) => {
+        console.log("EmailJS error:", err);
+        alert("❌ Fehler beim Senden. Bitte später erneut versuchen.");
+      });
+  };
+
+  return (
+
+    /**
+     * Haupt-Container der Kontaktsektion
      */
     <section id="contact" className="contact">
 
-      {/* Background glow effect for visual styling */}
+      {/* Dekoratives Hintergrund-Element */}
       <div className="contact-glow"></div>
 
       <div className="contact-container">
         <div className="contact-grid">
 
-          {/* ===== Left Content Area (Contact Information) ===== */}
+          {/* ===================== */}
+          {/* Linke Seite: Infos   */}
+          {/* ===================== */}
           <div className="contact-left">
 
-            {/* Section headline */}
             <h2 className="contact-kicker">Kontakt</h2>
 
-            {/* Main value proposition */}
             <h3 className="contact-title">
               Lassen Sie uns Ihr Geschäft
               <span className="accent"> gemeinsam</span>
               voranbringen.
             </h3>
 
-            {/* Short description text */}
             <p className="contact-desc">
-              Haben Sie eine Idee oder eine Problemstellung? 
-              Ich freue mich auf Ihre Nachricht und melde mich 
+              Haben Sie eine Idee oder eine Problemstellung?
+              Ich freue mich auf Ihre Nachricht und melde mich
               innerhalb von 24 Stunden bei Ihnen zurück.
             </p>
 
-            {/* ===== Contact Info Blocks ===== */}
+            {/* Kontaktinformationen */}
             <div className="contact-info contact-links">
 
               {/* Email Block */}
@@ -61,7 +142,7 @@ const Contact: React.FC = () => {
                   <p className="info-label">Schreiben Sie mir</p>
 
                   <div className="info-value">
-                    {/* Clickable mail link */}
+                    {/* mailto öffnet nur das Mailprogramm */}
                     <a href="mailto:sa_mh87@outlook.de">
                       sa_mh87@outlook.de
                     </a>
@@ -69,7 +150,7 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              {/* Location Block */}
+              {/* Standort */}
               <div className="info-item">
                 <div className="info-icon">📍</div>
 
@@ -82,45 +163,86 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* ===== Right Content Area (Contact Form) ===== */}
+
+          {/* ===================== */}
+          {/* Rechte Seite: Formular */}
+          {/* ===================== */}
           <div className="contact-card">
 
-            <form className="contact-form">
+            {/* 
+              WICHTIG:
+              ref verbindet das Formular mit formRef
+              onSubmit ruft sendEmail auf
+            */}
+            <form
+              ref={formRef}
+              onSubmit={sendEmail}
+              className="contact-form"
+            >
 
-              {/* Name + Email Grid */}
+              {/* Name + Email */}
               <div className="form-grid">
+
                 <div>
                   <label>Ihr Name</label>
-                  <input type="text" placeholder="Max Mustermann" />
+
+                  {/* 
+                    name="name" ist extrem wichtig!
+                    EmailJS liest nur Felder mit name=""
+                  */}
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Max Mustermann"
+                    required
+                  />
                 </div>
 
                 <div>
                   <label>E-Mail Adresse</label>
-                  <input type="email" placeholder="max@beispiel.de" />
+
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="max@beispiel.de"
+                    required
+                  />
                 </div>
               </div>
 
-              {/* Subject selection */}
+              {/* Betreff */}
               <div>
                 <label>Betreff</label>
-                <select>
-                  <option>Neue Webseite / Onlineshop</option>
-                  <option>Webseiteoptimierung</option>
-                  <option>Landingpage</option>
-                  <option>Sonstiges</option>
+
+                <select name="subject" required>
+                  <option value="Neue Webseite / Onlineshop">
+                    Neue Webseite / Onlineshop
+                  </option>
+                  <option value="Webseiteoptimierung">
+                    Webseiteoptimierung
+                  </option>
+                  <option value="Landingpage">
+                    Landingpage
+                  </option>
+                  <option value="Sonstiges">
+                    Sonstiges
+                  </option>
                 </select>
               </div>
 
-              {/* Message textarea */}
+              {/* Nachricht */}
               <div>
                 <label>Ihre Nachricht</label>
+
                 <textarea
+                  name="message"
                   rows={4}
                   placeholder="Erzählen Sie mir kurz von Ihrem Projekt..."
+                  required
                 />
               </div>
 
-              {/* Submit button */}
+              {/* Submit Button */}
               <button type="submit" className="submit-btn">
                 Anfrage absenden
               </button>
