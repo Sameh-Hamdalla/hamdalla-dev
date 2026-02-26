@@ -120,7 +120,7 @@ const Contact: React.FC = () => {
 
             <h3 className="contact-title">
               Lassen Sie uns Ihr Geschäft
-              <span className="accent"> gemeinsam</span>
+              <span className="accent"> gemeinsam </span>
               voranbringen.
             </h3>
 

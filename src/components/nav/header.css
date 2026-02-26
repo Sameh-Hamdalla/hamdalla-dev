@@ -68,7 +68,9 @@
   gap: 10px; 
   /* Abstand zwischen Icon und Text */
 }
-
+.logo-img{
+   transform: scale(1.08);
+}
 
 .logo-icon {
   width: 40px; 
@@ -112,8 +114,14 @@
 
   color: #0f172a; 
   /* Dunkle Textfarbe */
-}
 
+  cursor: pointer;
+}
+.logo-text:hover{
+   color: #4f46e5;
+    transform: scale(1.1);
+
+}
 
 /* ===== Nav ===== */
 .nav {
