@@ -43,12 +43,12 @@ const Hero: React.FC<HeroProps> = ({ onOpenConsultant }) => {
                 Meine Leistungen
               </a>
 
-              {/* <button
+              <button
                 onClick={onOpenConsultant}
                 className="btn-secondary"
               >
                 KI-Berater fragen
-              </button> */}
+              </button>
 
             </div>
           </div>

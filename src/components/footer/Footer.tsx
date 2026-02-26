@@ -1,5 +1,6 @@
 import React from "react";
 import "./footer.css";
+import logo from "../../assets/logo.png";
 
 const Footer: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const Footer: React.FC = () => {
 
           {/* Logo */}
           <div className="footer-logo">
-            <div className="footer-logo-icon">HD</div>
+             <img src={logo} alt="Hamdalla Dev Logo" className="logo-img" />
             <span className="footer-logo-text">HAMDALLA-DEV</span>
           </div>
 
