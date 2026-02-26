@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./ai-consultant.css";
 import { getAIConsultation } from "../../api/geminiService";
-import { ChatMessage } from "../../types";
+import { ChatMessage } from "../../../types";
 
 interface Props {
   isOpen: boolean;
@@ -49,7 +49,7 @@ const AIConsultant: React.FC<Props> = ({ isOpen, onClose }) => {
           <div className="ai-header-left">
             <div className="ai-avatar">🤖</div>
             <div>
-              <div className="ai-title">DevFlow KI-Berater</div>
+              <div className="ai-title">Hamdi KI-Berater</div>
               <div className="ai-status">Online</div>
             </div>
           </div>
