@@ -63,13 +63,13 @@
 }
 
 /* ===== Info ===== */
-.contact-info {
+.contact-links {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.info-item {
+.info-item, .info-value {
   display: flex;
   gap: 16px;
   align-items: center;
@@ -104,11 +104,7 @@
   color: #94a3b8;
   font-size: 14px;
 }
-.contact-links {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
+
 
 .whatsapp-link img {
   width: 32px;
@@ -122,8 +118,20 @@
 
 .info-value {
   font-weight: 700;
+  color: white;
+}
+/* Link im Kontaktbereich wie normaler Text (oder wie dein Design) */
+.info-value a {
+  color: inherit;            /* übernimmt die Farbe vom Eltern-Element */
+  text-decoration: none;     /* entfernt Unterstreichung */
+  font-weight: 600;          /* optional */
 }
 
+/* Hover-Effekt */
+.info-value a:hover {
+  text-decoration: underline; /* oder z.B. opacity */
+  opacity: 0.9;
+}
 /* ===== Card ===== */
 .contact-card {
   background: white;
