@@ -17,6 +17,13 @@ import telefon from "../../assets/telefon.png"
 // - image (Bild-Quelle)
 // - client (optional, aktuell auskommentiert)
 const projects = [
+
+   {
+    title: "Taxi Unternehmen",
+    category: "Unternehmenswebsite",
+    image: taxi2,
+    site: "https://marsaalam-yassin-taxi.vercel.app/"
+  },
   {
     title: "InventarManager-App", // Name des Projekts
     category: "Individualsoftware", // Kategorie
@@ -31,12 +38,7 @@ const projects = [
     // Externes Bild über URL
     site: "https://iphone-landingpage.vercel.app/"
   },
-  {
-    title: "Taxi Unternehmen",
-    category: "Unternehmenswebsite",
-    image: taxi2,
-    site: "https://marsaalam-yassin-taxi.vercel.app/"
-  }
+ 
 ];
 
 
