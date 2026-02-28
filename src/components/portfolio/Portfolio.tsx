@@ -10,6 +10,7 @@ import inventar from "../../assets/inventar.png"
 
 import taxi2 from "../../assets/taxi2.png"
 import telefon from "../../assets/telefon.png"
+import pizza from "../../assets/pizza.png"
 // Array mit allen Projekten
 // Jedes Projekt ist ein Objekt mit:
 // - title (Projektname)
@@ -29,6 +30,13 @@ const projects = [
     category: "Individualsoftware", // Kategorie
     image: inventar, // Lokales importiertes Bild
     site: "https://inventar-manager-frontend.vercel.app/inventar" 
+  
+  },
+    {
+    title: "Restaurant Pizzerua HAMHAM", // Name des Projekts
+    category: "Individualsoftware", // Kategorie
+    image: pizza, // Lokales importiertes Bild
+    site: "https://restaurant-pizzeria-hamham.vercel.app/" 
   
   },
   {
