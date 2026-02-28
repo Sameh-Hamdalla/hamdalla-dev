@@ -33,7 +33,7 @@ const projects = [
   
   },
     {
-    title: "Restaurant Pizzerua HAMHAM", // Name des Projekts
+    title: "Restaurant Pizzeria HAMHAM", // Name des Projekts
     category: "Individualsoftware", // Kategorie
     image: pizza, // Lokales importiertes Bild
     site: "https://restaurant-pizzeria-hamham.vercel.app/" 
