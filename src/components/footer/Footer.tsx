@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
           {/* Logo */}
           <div className="footer-logo">
              <img src={logo} alt="Hamdalla Dev Logo" className="logo-img" />
-            <span className="footer-logo-text">HAMDALLA-DEV</span>
+            <span className="footer-logo-text">Hamdalla Digital</span>
           </div>
 
           {/* Links */}
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
 
           {/* Copyright */}
           <p className="footer-copy">
-            &copy; {new Date().getFullYear()} Hamdalla Dev Softwarelösungen.
+            &copy; {new Date().getFullYear()} Hamdalla  Digital Webentwicklungen
             Alle Rechte vorbehalten.
           </p>
 
