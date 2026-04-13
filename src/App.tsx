@@ -7,7 +7,13 @@ import Portfolio from './components/portfolio/Portfolio';
 import AIConsultant from './components/Services/AIConsultant';
 import Contact from './components/kontakt/Contact';
 import Footer from './components/footer/Footer';
+import ScrollToTop from "./ScrollToTop";
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Impressum from './components/pages/impressum';
+// später auch:
+// import Datenschutz from './pages/datenschutz';
+// import AGB from './pages/agb';
 
 
 const App: React.FC = () => {
@@ -15,23 +21,41 @@ const App: React.FC = () => {
   
 
   return (
+  
     <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-grow">
-        <Hero onOpenConsultant={() => setIsConsultantOpen(true)} />
-        <Services />
-        <Portfolio />
-        <Contact />
-      </main>
-      <Footer />
       
+     
+      <Header />
+      <ScrollToTop />
+
+      <main className="flex-grow">
+        <Routes>
+
+          {/* STARTSEITE */}
+          <Route path="/" element={
+            <>
+              <Hero onOpenConsultant={() => setIsConsultantOpen(true)} />
+              <Services />
+              <Portfolio />
+              <Contact />
+            </>
+          } />
+
+          {/* IMPRESSUM */}
+          <Route path="/impressum" element={<Impressum />} />
+
+        </Routes>
+      </main>
+
+      <Footer />
+
       {/* Floating AI Consultant UI */}
       <AIConsultant 
         isOpen={isConsultantOpen} 
         onClose={() => setIsConsultantOpen(false)} 
       />
-      
-      {/* Floating Bubble Button */}
+
+      {/* Floating Button */}
       {!isConsultantOpen && (
         <button
           onClick={() => setIsConsultantOpen(true)}
@@ -43,7 +67,9 @@ const App: React.FC = () => {
           </svg>
         </button>
       )}
+
     </div>
+  
   );
 };
 

@@ -1,28 +1,29 @@
 import React, { useState } from "react";
 import "./header.css";
 import logo from "../../assets/logo.png";
-
+import { Link } from "react-router-dom";
+import ScrollToTop from "@/src/ScrollToTop";
 const Header: React.FC = () => {
   // States
 
   const [menuOpen, setMenuOpen] = useState(false);
   
   return (
-    <header className="header">
+    <><header className="header">
       <div className="header-container">
 
         <div className="header-inner">
 
           {/* Logo */}
-          <div className="logo-group">
+          <Link to="/" className="logo-group">
             <img src={logo} alt="Hamdalla Web Logo" className="logo-img" />
             <span className="logo-text">HAMDALLA WEB</span>
-          </div>
+          </Link>
 
           {/* Navigation */}
           <nav className="nav">
-            <a href="#services">Leistungen</a>
-            <a href="#portfolio">Referenzen</a>
+            <a href="/#services">Leistungen</a>
+            <a href="/#portfolio">Referenzen</a>
             <a href="#contact">Kontakt</a>
           </nav>
 
@@ -33,7 +34,7 @@ const Header: React.FC = () => {
 
           {/* Burger Button (Mobile) */}
           <button className="burger"
-          onClick={()=>setMenuOpen(!menuOpen)}>
+            onClick={() => setMenuOpen(!menuOpen)}>
             ☰
           </button>
 
@@ -43,14 +44,14 @@ const Header: React.FC = () => {
               <a href="#services" onClick={() => setMenuOpen(false)}>Leistungen</a>
               <a href="#portfolio" onClick={() => setMenuOpen(false)}>Referenzen</a>
               <a href="#contact" onClick={() => setMenuOpen(false)}>Kontakt</a>
-              <a href="#contact" className="mobile-cta"onClick={() => setMenuOpen(false)}>Projekt anfragen</a>
+              <a href="#contact" className="mobile-cta" onClick={() => setMenuOpen(false)}>Projekt anfragen</a>
             </div>
           )}
 
         </div>
 
       </div>
-    </header>
+    </header><ScrollToTop /></>
   );
 };
 
