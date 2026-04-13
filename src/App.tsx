@@ -8,8 +8,11 @@ import AIConsultant from './components/Services/AIConsultant';
 import Contact from './components/kontakt/Contact';
 import Footer from './components/footer/Footer';
 
+
+
 const App: React.FC = () => {
   const [isConsultantOpen, setIsConsultantOpen] = useState(false);
+  
 
   return (
     <div className="min-h-screen flex flex-col">

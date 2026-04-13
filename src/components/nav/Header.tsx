@@ -15,8 +15,8 @@ const Header: React.FC = () => {
 
           {/* Logo */}
           <div className="logo-group">
-            <img src={logo} alt="Hamdalla Dev Logo" className="logo-img" />
-            <span className="logo-text">Hamdalla Digital</span>
+            <img src={logo} alt="Hamdalla Web Logo" className="logo-img" />
+            <span className="logo-text">HAMDALLA WEB</span>
           </div>
 
           {/* Navigation */}
