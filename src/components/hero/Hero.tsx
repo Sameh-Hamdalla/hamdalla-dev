@@ -1,6 +1,5 @@
 import React from "react";
 import "./hero.css";
-import samehBild from "../../assets/samehBild.jpg";
 import wutach from "../../assets/wutach.jpg";
 
 // Diese Komponente bekommt eine Funktion von einer anderen Komponente und darf sie ausführen.
