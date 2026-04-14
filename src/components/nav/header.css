@@ -1,240 +1,205 @@
-/* ===== Reset light ===== */
+/* ===== Reset ===== */
 * {
-  box-sizing: border-box; 
-  /* width & height enthalten Inhalt + Padding + Border */
+  box-sizing: border-box;
 }
 
-
-/* ===== Header ===== */
-.header {
-  position: sticky; 
-  /* Bewegt sich normal, bleibt aber beim Scrollen oben kleben */
-
-  top: 0; 
-  /* Klebt ganz oben am Bildschirm */
-
-  z-index: 50; 
-  /* Liegt über anderen Elementen (höher = weiter vorne) */
-
-  background: rgba(255,255,255,0.9); 
-  /* Weiß mit leichter Transparenz */
-
-  backdrop-filter: blur(8px); 
-  /* Macht den Hintergrund dahinter leicht unscharf */
-
-  border-bottom: 1px solid #e2e8f0; 
-  /* Dünne graue Linie unten */
-}
-
-
-/* ===== Container ===== */
-.header-container {
-  max-width: 1280px; 
-  /* Maximale Breite des Inhalts */
-
-  margin: 0 auto; 
-  /* Zentriert den Container horizontal */
-
-  padding: 0 24px; 
-  /* Innenabstand links & rechts */
-}
-
-
-/* ===== Inner Layout ===== */
-.header-inner {
-  display: flex; 
-  /* Aktiviert Flexbox (Elemente nebeneinander) */
-
-  align-items: center; 
-  /* Vertikal zentrieren */
-
-  justify-content: space-between; 
-  /* Elemente links & rechts verteilen */
-
-  height: 80px; 
-  /* Höhe des Headers */
-    position: relative; /* wichtig */
-}
-
-
-/* ===== Logo ===== */
-.logo-group {
-  display: flex; 
-  /* Logo-Icon + Text nebeneinander */
-
-  align-items: center; 
-  /* Vertikal ausrichten */
-
-  gap: 10px; 
-  /* Abstand zwischen Icon und Text */
-}
-.logo-img{
-   transform: scale(1.08);
-   cursor: pointer;
-   border-radius: 10%;
-}
-
-.logo-icon {
-  width: 40px; 
-  /* Breite */
-
-  height: 40px; 
-  /* Höhe */
-
-  border-radius: 10px; 
-  /* Runde Ecken */
-
-  background: #4f46e5; 
-  /* Hintergrundfarbe */
-
-  color: white; 
-  /* Textfarbe */
-
-  display: flex; 
-  /* Flexbox aktivieren */
-
-  align-items: center; 
-  /* Text vertikal zentrieren */
-
-  justify-content: center; 
-  /* Text horizontal zentrieren */
-
-  font-weight: 700; 
-  /* Fett */
-
-  font-size: 20px; 
-  /* Schriftgröße */
-}
-
-
-.logo-text {
-  font-size: 24px; 
-  /* Große Schrift */
-
-  font-weight: 700; 
-  /* Fett */
-
-  color: #0f172a; 
-  /* Dunkle Textfarbe */
-
-  cursor: pointer;
-}
-.logo-text:hover{
-   color: #4f46e5;
-    transform: scale(1.02);
-
-}
-
-/* ===== Nav ===== */
-.nav {
-  display: flex; 
-  /* Links nebeneinander */
-
-  gap: 32px; 
-  /* Abstand zwischen Links */
-
-  font-size: 14px; 
-  /* Schriftgröße */
-
-  font-weight: 600; 
-  /* Halb-fett */
-}
-
-
-.nav a {
-  text-decoration: none; 
-  /* Entfernt Unterstreichung */
-
-  color: #475569; 
-  /* Standardfarbe */
-
-  transition: color 0.2s ease; 
-  /* Sanfter Farbwechsel */
-}
-
-
-.nav a:hover {
-  color: #4f46e5; 
-  /* Farbe ändert sich beim Hover */
-}
-
-
-/* ===== Button ===== */
-.cta-btn {
-  background: #0f172a; 
-  /* Hintergrundfarbe */
-
-  color: white; 
-  /* Textfarbe */
-
-  padding: 10px 18px; 
-  /* Innenabstand */
-
-  border-radius: 999px; 
-  /* Sehr runde Ecken (Pillenform) */
-
-  font-size: 14px; 
-  /* Schriftgröße */
-
-  font-weight: 600; 
-  /* Halb-fett */
-
-  text-decoration: none; 
-  /* Keine Unterstreichung */
-
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15); 
-  /* Leichter Schatten */
-
-  transition: all 0.2s ease; 
-  /* Sanfte Animation */
-}
-
-
-.cta-btn:hover {
-  background: #1f2937; 
-  /* Dunklere Farbe beim Hover */
-
-  transform: translateY(-1px); 
-  /* Bewegt sich leicht nach oben */
-}
-
-
-.logo-img {
-  height: 40px; 
-  /* Feste Höhe */
-
-  width: auto; 
-  /* Breite passt sich automatisch an */
-
-  display: block; 
-  /* Entfernt kleinen unteren Abstand bei Bildern */
-}
 
 /* ============================= */
-/* ===== BURGER BUTTON ===== */
+/* ===== HEADER ===== */
+/* ============================= */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(226,232,240,0.6);
+}
+
+
+/* ============================= */
+/* ===== CONTAINER ===== */
+/* ============================= */
+
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+
+/* ============================= */
+/* ===== INNER ===== */
+/* ============================= */
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 80px;
+  position: relative;
+}
+
+
+/* ============================= */
+/* ===== LOGO ===== */
+/* ============================= */
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+   text-decoration: none;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+
+  border-radius: 10%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.08);
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+ 
+
+}
+
+.logo-text:hover {
+  color: #4f46e5;
+  transform: translateY(-1px);
+}
+
+
+/* ============================= */
+/* ===== NAV (UPGRADED) ===== */
+/* ============================= */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* LINKS */
+.nav a {
+  position: relative;
+  text-decoration: none;
+  color: #475569;
+
+  padding: 6px 4px;
+  transition: all 0.25s ease;
+}
+
+/* HOVER */
+.nav a:hover {
+  color: #4f46e5;
+  transform: translateY(-2px);
+}
+
+/* UNDERLINE ANIMATION */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0%;
+  height: 2px;
+
+  background: linear-gradient(90deg, #6366f1, #4f46e5);
+  border-radius: 2px;
+
+  transition: width 0.25s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* ACTIVE LINK */
+.nav a.active {
+  color: #4f46e5;
+}
+
+.nav a.active::after {
+  width: 100%;
+}
+
+
+/* ============================= */
+/* ===== CTA BUTTON ===== */
+/* ============================= */
+
+.cta-btn {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+
+  padding: 10px 20px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+
+  box-shadow: 0 8px 20px rgba(79,70,229,0.35);
+
+  transition: all 0.25s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(79,70,229,0.5);
+}
+
+
+/* ============================= */
+/* ===== BURGER ===== */
 /* ============================= */
 
 .burger {
-  display: none; /* Standard: versteckt */
+  display: none;
   font-size: 26px;
   background: none;
   border: none;
   cursor: pointer;
 }
+
+
 /* ============================= */
 /* ===== MOBILE MENU ===== */
 /* ============================= */
 
 .mobile-menu {
   position: absolute;
-  top: 70px;   /* unter dem Header */
-  right: 24px; /* rechts ausrichten */
+  top: 70px;
+  right: 24px;
 
-  width: 220px;
-  background: white;
+  width: 230px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+
   border-radius: 16px;
-
   padding: 20px;
+
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -248,17 +213,24 @@
   font-weight: 600;
 }
 
+.mobile-menu a:hover {
+  color: #4f46e5;
+}
+
 .mobile-cta {
   margin-top: 10px;
   padding: 12px;
   border-radius: 12px;
-  background: #4f46e5;
+
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
   color: white !important;
+
   text-align: center;
 }
 
+
 /* ============================= */
-/* ===== MOBILE NAV ===== */
+/* ===== MOBILE ===== */
 /* ============================= */
 
 @media (max-width: 768px) {
@@ -272,20 +244,21 @@
   }
 
   .nav {
-    display: none; /* Navigation ausblenden */
+    display: none;
   }
 
   .cta-btn {
-    display: none; /* CTA Button ausblenden */
-  }
-  .burger {
-    display: block; /* Burger erscheint */
+    display: none;
   }
 
+  .burger {
+    display: block;
+  }
 }
 
+
 /* ============================= */
-/* ===== TABLET NAV ===== */
+/* ===== TABLET ===== */
 /* ============================= */
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -295,11 +268,10 @@
   }
 
   .nav {
-    gap: 24px;
+    gap: 28px;
   }
 
   .logo-text {
     font-size: 22px;
   }
-
 }

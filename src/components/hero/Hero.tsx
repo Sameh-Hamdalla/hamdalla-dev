@@ -1,6 +1,8 @@
 import React from "react";
 import "./hero.css";
 import wutach from "../../assets/wutach.jpg";
+import frw2 from "../../assets/frw2.png";
+import klu from "../../assets/klu.png";
 
 // Diese Komponente bekommt eine Funktion von einer anderen Komponente und darf sie ausführen.
 // interface ist eine Beschreibung, welche Daten erlaubt sind.
@@ -59,15 +61,28 @@ const Hero: React.FC<HeroProps> = ({ onOpenConsultant }) => {
             <div className="hero-glow"></div>
 
             <img
-              src={wutach}
+              src={klu}
               alt="Bild Sameh Hamdalla"
               className="hero-image"
             />
 
-            <div className="hero-status">
+            {/* <img
+              src={wutach}
+              alt="Bild Sameh Hamdalla"
+              className="hero-image"
+            /> */}
+
+            <img
+              src={frw2}
+              alt="Bild Sameh Hamdalla"
+              className="hero-image"
+            />
+
+
+            {/* <div className="hero-status">
               <span className="status-dot"></span>
               Verfügbar für neue Projekte
-            </div>
+            </div> */}
 
           </div>
 
