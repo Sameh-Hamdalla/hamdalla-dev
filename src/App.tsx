@@ -11,8 +11,8 @@ import ScrollToTop from "./ScrollToTop";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Impressum from './components/pages/impressum';
+import Datenschutz from './components/pages/datenschutz';
 // später auch:
-// import Datenschutz from './pages/datenschutz';
 // import AGB from './pages/agb';
 
 
@@ -43,6 +43,7 @@ const App: React.FC = () => {
 
           {/* IMPRESSUM */}
           <Route path="/impressum" element={<Impressum />} />
+          <Route path="/datenschutz" element={<Datenschutz/>} />
 
         </Routes>
       </main>

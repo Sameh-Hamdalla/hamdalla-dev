@@ -30,93 +30,109 @@ const Datenschutz = () => {
         .datenschutz-container ul {
           padding-left: 1.2rem;
         }
-
-        .datenschutz-container li {
-          margin: 0.3rem 0;
-        }
       `}</style>
 
       <h1>Datenschutzerklärung</h1>
 
+      <h2>1. Verantwortlicher</h2>
       <p>
-        Willkommen bei der Datenschutzrichtlinie von www.hamdalla-web.com/. Diese
-        Richtlinie hilft Ihnen zu verstehen, welche Daten wir erheben, warum wir
-        sie erheben und welche Rechte Sie diesbezüglich haben.
-      </p>
-
-      <p><strong>Letzte Aktualisierung: 13. April 2026</strong></p>
-
-      <h2>Arten der erhobenen Daten</h2>
-      <p>
-        Der Eigentümer stellt keine Auflistung der erhobenen personenbezogenen
-        Daten zur Verfügung.
-      </p>
-
-      <p>
-        Personenbezogene Daten können vom Nutzer freiwillig angegeben oder
-        automatisch erhoben werden, wenn diese Anwendung genutzt wird.
-      </p>
-
-      <h2>Art und Ort der Datenverarbeitung</h2>
-      <p>
-        Der Anbieter verarbeitet personenbezogene Daten der Nutzer auf
-        ordnungsgemäße Weise und ergreift Sicherheitsmaßnahmen zum Schutz vor
-        unbefugtem Zugriff.
-      </p>
-
-      <h2>Speicherdauer</h2>
-      <p>
-        Personenbezogene Daten werden so lange gespeichert, wie es für den Zweck
-        erforderlich ist oder gesetzliche Verpflichtungen bestehen.
-      </p>
-
-      <h2>Cookie-Richtlinie</h2>
-      <p>
-        Diese Anwendung verwendet Cookies und Tracking-Technologien zur
-        Bereitstellung und Verbesserung der Dienste.
-      </p>
-
-      <h2>Rechtsgrundlagen der Verarbeitung</h2>
-      <ul>
-        <li>Einwilligung des Nutzers</li>
-        <li>Vertragserfüllung</li>
-        <li>Rechtliche Verpflichtungen</li>
-        <li>Berechtigte Interessen</li>
-      </ul>
-
-      <h2>Rechte der Nutzer (DSGVO)</h2>
-      <ul>
-        <li>Auskunft über gespeicherte Daten</li>
-        <li>Berichtigung falscher Daten</li>
-        <li>Löschung der Daten</li>
-        <li>Einschränkung der Verarbeitung</li>
-        <li>Datenübertragbarkeit</li>
-        <li>Widerspruch gegen Verarbeitung</li>
-      </ul>
-
-      <h2>Kontakt</h2>
-      <p>
-        Bei Fragen zur Verarbeitung Ihrer Daten kontaktieren Sie uns unter:
+        Sameh Hamdalla<br />
+        HAMDALLA WEB<br />
+        Jägerweg 8<br />
+        79879 Wutach<br />
+        Deutschland
       </p>
       <p>
+        Telefon: 015154844078<br />
         E-Mail: info@hamdalla-web.com
       </p>
 
-      <h2>Änderungen dieser Datenschutzerklärung</h2>
+      <h2>2. Allgemeine Hinweise</h2>
       <p>
-        Der Anbieter behält sich vor, diese Datenschutzerklärung jederzeit zu
-        ändern. Nutzer werden gebeten, diese Seite regelmäßig zu überprüfen.
+        Der Schutz Ihrer persönlichen Daten ist uns wichtig. Wir behandeln Ihre
+        personenbezogenen Daten vertraulich und entsprechend der gesetzlichen
+        Datenschutzvorschriften (DSGVO).
       </p>
 
-      <h2>Begriffsbestimmungen</h2>
+      <h2>3. Datenerfassung auf unserer Website</h2>
       <p>
-        Personenbezogene Daten sind alle Informationen, die eine Person direkt
-        oder indirekt identifizieren können.
+        Beim Besuch unserer Website werden automatisch Informationen erfasst:
+      </p>
+      <ul>
+        <li>IP-Adresse</li>
+        <li>Browsertyp</li>
+        <li>Betriebssystem</li>
+        <li>Uhrzeit des Zugriffs</li>
+      </ul>
+      <p>
+        Diese Daten dienen der technischen Sicherheit und werden nicht zur
+        Identifikation genutzt.
       </p>
 
+      <h2>4. Kontaktaufnahme</h2>
       <p>
-        Nutzungsdaten sind technische Informationen wie IP-Adresse,
-        Browsertyp oder Zugriffszeiten.
+        Wenn Sie uns per E-Mail oder Kontaktformular kontaktieren, werden Ihre
+        Angaben zur Bearbeitung Ihrer Anfrage gespeichert.
+      </p>
+      <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO</p>
+
+      <h2>5. Hosting</h2>
+      <p>
+        Unsere Website wird bei einem externen Anbieter gehostet. Dabei können
+        personenbezogene Daten (z. B. IP-Adressen) verarbeitet werden.
+      </p>
+
+      <h2>6. Cookies</h2>
+      <p>
+        Unsere Website verwendet Cookies, um die Nutzung zu verbessern. Sie
+        können Cookies in Ihrem Browser jederzeit deaktivieren.
+      </p>
+
+      <h2>7. Instagram</h2>
+      <p>
+        Auf unserer Website sind Links zu unserem Profil bei Instagram
+        eingebunden.
+      </p>
+      <p>
+        Instagram ist ein Dienst der Meta Platforms Ireland Limited,
+        4 Grand Canal Square, Dublin 2, Irland.
+      </p>
+      <p>
+        Wenn Sie auf einen Instagram-Link klicken, werden Sie auf die externe
+        Website von Instagram weitergeleitet. Dabei können personenbezogene Daten
+        (z. B. IP-Adresse) an Instagram übermittelt werden.
+      </p>
+      <p>
+        Wir haben keinen Einfluss auf die Verarbeitung dieser Daten durch
+        Instagram.
+      </p>
+      <p>
+        Weitere Informationen finden Sie hier:
+        https://help.instagram.com/519522125107875
+      </p>
+
+      <h2>8. Externe Links</h2>
+      <p>
+        Unsere Website enthält Links zu externen Seiten. Für deren Inhalte und
+        Datenschutz sind die jeweiligen Betreiber verantwortlich.
+      </p>
+
+      <h2>9. Ihre Rechte</h2>
+      <ul>
+        <li>Auskunft über Ihre Daten</li>
+        <li>Berichtigung</li>
+        <li>Löschung</li>
+        <li>Einschränkung der Verarbeitung</li>
+        <li>Widerspruch gegen die Verarbeitung</li>
+      </ul>
+      <p>
+        Sie haben außerdem das Recht, sich bei einer Datenschutzbehörde zu
+        beschweren.
+      </p>
+
+      <h2>10. Änderungen</h2>
+      <p>
+        Wir behalten uns vor, diese Datenschutzerklärung anzupassen.
       </p>
 
     </div>
