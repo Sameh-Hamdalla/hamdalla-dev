@@ -1,95 +1,109 @@
 import React from "react";
 import "./hero.css";
-import wutach from "../../assets/wutach.jpg";
 import frw2 from "../../assets/frw2.png";
 import klu from "../../assets/klu.png";
 
-// Diese Komponente bekommt eine Funktion von einer anderen Komponente und darf sie ausführen.
-// interface ist eine Beschreibung, welche Daten erlaubt sind.
-
+/**
+ * Props Interface:
+ * Beschreibt welche Daten diese Komponente von außen bekommt
+ */
 interface HeroProps {
   onOpenConsultant: () => void;
 }
 
-// FC => Function Component, Hero darf nur Probs bekommen, die in HeroProps stehen
+/**
+ * Hero Component:
+ * - Oben: Hero Bereich (Text + Buttons)
+ * - Darunter: Image Section (separate visuelle Cards)
+ */
 const Hero: React.FC<HeroProps> = ({ onOpenConsultant }) => {
   return (
-    <section className="hero">
+    <>
+      {/* ============================= */}
+      {/* ===== HERO SECTION ===== */}
+      {/* ============================= */}
+      <section className="hero">
 
-      <div className="hero-container">
+        <div className="hero-container">
 
-        <div className="hero-grid">
+          <div className="hero-grid">
 
-          {/* ===== Left ===== */}
-          <div className="hero-left">
+            {/* ===== LEFT SIDE (Text + CTA) ===== */}
+            <div className="hero-left">
 
-            <span className="hero-badge">
-              Exklusiv für KMUs & Einzelhandel
-            </span>
+              {/* Badge / kleine Info */}
+              <span className="hero-badge">
+                Exklusiv für KMUs & Einzelhandel
+              </span>
 
-            <h1 className="hero-title">
-              Ihre Vision,
-              <span className="accent"> digital perfektioniert.</span>
-            </h1>
+              {/* Hauptüberschrift */}
+              <h1 className="hero-title">
+                Ihre Vision,
+                <span className="accent"> digital perfektioniert.</span>
+              </h1>
 
-            <p className="hero-text">
-              Vom lokalen Laden zum digitalen Vorreiter.
-              Ich entwickle maßgeschneiderte Softwarelösungen,
-              Webseiten und Onlineshops, die Ihr Geschäft
-              wirklich voranbringen.
-            </p>
+              {/* Beschreibungstext */}
+              <p className="hero-text">
+                Vom lokalen Laden zum digitalen Vorreiter.
+                Ich entwickle maßgeschneiderte Softwarelösungen,
+                Webseiten und Onlineshops, die Ihr Geschäft
+                wirklich voranbringen.
+              </p>
 
-            <div className="hero-buttons">
+              {/* Buttons */}
+              <div className="hero-buttons">
 
-              <a href="#services" className="btn-primary">
-                Meine Leistungen
-              </a>
+                {/* Scrollt zu Leistungen */}
+                <a href="#services" className="btn-primary">
+                  Meine Leistungen
+                </a>
 
-              <button
-                onClick={onOpenConsultant}
-                className="btn-secondary"
-              >
-                KI-Berater fragen
-              </button>
+                {/* Öffnet KI-Berater */}
+                <button
+                  onClick={onOpenConsultant}
+                  className="btn-secondary"
+                >
+                  KI-Berater fragen
+                </button>
 
+              </div>
             </div>
-          </div>
 
-          {/* ===== Right ===== */}
-          <div className="hero-right">
-
-            <div className="hero-glow"></div>
-
-            <img
-              src={klu}
-              alt="Bild Sameh Hamdalla"
-              className="hero-image"
-            />
-
-            {/* <img
-              src={wutach}
-              alt="Bild Sameh Hamdalla"
-              className="hero-image"
-            /> */}
-
-            <img
-              src={frw2}
-              alt="Bild Sameh Hamdalla"
-              className="hero-image"
-            />
-
-
-            {/* <div className="hero-status">
-              <span className="status-dot"></span>
-              Verfügbar für neue Projekte
-            </div> */}
+            {/* ===== RIGHT SIDE (optional leer oder später für Animationen) ===== */}
+            <div className="hero-right">
+              {/* absichtlich leer → sorgt für sauberes Layout */}
+            </div>
 
           </div>
 
         </div>
+      </section>
 
-      </div>
-    </section>
+      {/* ============================= */}
+      {/* ===== IMAGE SECTION ===== */}
+      {/* ============================= */}
+      {/* <section className="hero-images-section">
+
+        <div className="hero-images-container">
+
+    
+          <img
+            src={klu}
+            alt="Projekt Vorschau 1"
+            className="hero-image-card"
+          />
+
+         
+          <img
+            src={frw2}
+            alt="Projekt Vorschau 2"
+            className="hero-image-card"
+          />
+
+        </div>
+
+      </section> */}
+    </>
   );
 };
 

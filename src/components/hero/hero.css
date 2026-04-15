@@ -2,10 +2,13 @@
 /* ===== HERO SECTION ===== */
 /* ============================= */
 
+/* Overlay über dem Hintergrundbild */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
+
+  /* dunkler Verlauf für bessere Lesbarkeit */
   background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.75) 0%,
@@ -13,28 +16,21 @@
     rgba(0, 0, 0, 0.3) 70%,
     rgba(0, 0, 0, 0.1) 100%
   );
+
   z-index: 1;
 }
 
+/* Haupt-Hero Bereich */
 .hero {
-  position: relative; 
-  /* Macht die Section zum Referenzpunkt 
-     für absolute Elemente (z.B. Glow oder Status-Card) */
+  position: relative;
 
-  /* background: white;  */
-  /* Weißer Hintergrund */
-
+  /* Hintergrundbild */
   background: url("../../assets/wutach.jpg") center bottom / cover no-repeat;
   background-position: center 80%;
-  
-  padding: 80px 24px 140px; 
-  /* Innenabstand:
-     80px oben
-     24px links/rechts
-     140px unten (Platz für Status-Card) */
 
-  overflow: hidden; 
-  /* Verhindert, dass der Glow-Effekt außerhalb sichtbar wird */
+  padding: 100px 24px 140px;
+
+  overflow: hidden;
 }
 
 
@@ -43,14 +39,11 @@
 /* ============================= */
 
 .hero-container {
-  max-width: 1280px; 
-  /* Maximale Breite → Inhalt wird nicht zu breit */
-
-  margin: 0 auto; 
-  /* Zentriert den Container horizontal */
+  max-width: 1280px;
+  margin: 0 auto;
 
   position: relative;
-  z-index: 2;
+  z-index: 2; /* über Overlay */
 }
 
 
@@ -59,17 +52,13 @@
 /* ============================= */
 
 .hero-grid {
-  display: grid; 
-  /* Aktiviert CSS Grid */
+  display: grid;
 
-  grid-template-columns: 1fr 1fr; 
-  /* Zwei gleich große Spalten */
+  /* Links Inhalt, rechts leer (für Balance) */
+  grid-template-columns: 1fr 1fr;
 
-  gap: 64px; 
-  /* Abstand zwischen linker und rechter Spalte */
-
-  align-items: center; 
-  /* Vertikale Zentrierung beider Spalten */
+  gap: 64px;
+  align-items: center;
 }
 
 
@@ -77,73 +66,59 @@
 /* ===== LEFT SIDE ===== */
 /* ============================= */
 
+.hero-left {
+  max-width: 600px;
+}
+
+/* Badge oben */
 .hero-badge {
-  display: inline-block; 
-  /* Nimmt nur so viel Platz wie nötig */
+  display: inline-block;
 
   background: rgba(255,255,255,0.15);
-  /* Hellblauer Hintergrund */
+  color: white;
 
-  color: white; 
-  /* Dunkelblaue Schrift */
+  padding: 6px 14px;
+  border-radius: 999px;
 
-  padding: 6px 14px; 
-  /* Innenabstand */
+  font-size: 14px;
+  font-weight: 700;
 
-  border-radius: 999px; 
-  /* Vollständig abgerundet (Pill-Form) */
+  margin-bottom: 24px;
 
-  font-size: 14px; 
-  font-weight: 700; 
-  /* Fette Schrift */
-
-  margin-bottom: 24px; 
-  /* Abstand nach unten */
   backdrop-filter: blur(8px);
-   /* Weichzeichner-Effekt für den Hintergrund */
 }
 
 
+/* Hauptüberschrift */
 .hero-title {
-  font-size: 50px; 
-  /* Große Überschrift */
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
 
-  font-weight: 800; 
-  /* Extra fett */
+  color: #ffffff;
 
-  line-height: 1.1; 
-  /* Enger Zeilenabstand */
+  margin-bottom: 24px;
 
-  color:white; 
-  /* Dunkle Schriftfarbe */
-
-  margin-bottom: 24px; 
-  /* Abstand nach unten */
+  /* sorgt für besseren Kontrast */
+  text-shadow: 0 4px 20px rgba(0,0,0,0.6);
 }
 
 
-.accent {
-    color:white; 
-
-  /* Hebt einzelne Wörter farblich hervor */
+/* Hervorgehobenes Wort */
+.hero-title .accent {
+  color: #a5b4fc; /* leicht lila statt weiß = moderner Look */
 }
 
 
+/* Beschreibungstext */
 .hero-text {
-  font-size: 20px; 
-  /* Größerer Fließtext */
+  font-size: 20px;
+  color: rgba(255,255,255,0.9);
 
-    color:white; 
- 
-  /* Grau-blauer Text */
+  line-height: 1.6;
+  max-width: 560px;
 
-  line-height: 1.6; 
-  /* Mehr Zeilenabstand = bessere Lesbarkeit */
-
-  max-width: 560px; 
-  /* Text wird nicht zu breit */
-
-  margin-bottom: 36px; 
+  margin-bottom: 36px;
 }
 
 
@@ -152,185 +127,109 @@
 /* ============================= */
 
 .hero-buttons {
-  display: flex; 
-  /* Buttons nebeneinander */
-
-  gap: 16px; 
-  /* Abstand zwischen Buttons */
-
-  flex-wrap: wrap; 
-  /* Auf kleinen Bildschirmen umbrechen */
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 
+/* Primary Button */
 .btn-primary {
-  display: inline-flex; 
-  /* Flex nur für dieses Element */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  align-items: center; 
-  justify-content: center; 
-  /* Text im Button zentrieren */
-
-  padding: 16px 28px; 
+  padding: 16px 28px;
   border-radius: 16px;
 
-  background: #4f46e5; 
+  background: #4f46e5;
   color: white;
 
-  font-weight: 700; 
+  font-weight: 700;
   text-decoration: none;
 
-  box-shadow: 0 16px 40px rgba(79,70,229,0.35); 
-  /* Lila Schatten */
+  box-shadow: 0 16px 40px rgba(79,70,229,0.35);
 
-  transition: all 0.2s ease; 
-  /* Smooth Animation */
+  transition: all 0.2s ease;
 }
 
 .btn-primary:hover {
-  background: #4338ca; 
-  /* Dunklere Farbe */
-
-  transform: translateY(-2px); 
-  /* Leichte Bewegung nach oben */
+  background: #4338ca;
+  transform: translateY(-2px);
 }
 
 
+/* Secondary Button */
 .btn-secondary {
-  padding: 16px 28px; 
+  padding: 16px 28px;
   border-radius: 16px;
 
-  background: #4f46e5; 
+  background: transparent;
   color: white;
 
-  border: 1px solid #e2e8f0; 
-  /* Dünner Rahmen */
+  border: 1px solid rgba(255,255,255,0.4);
 
-  font-weight: 700; 
+  font-weight: 700;
   cursor: pointer;
 
-  transition: all 0.2s ease; 
+  transition: all 0.2s ease;
 }
 
 .btn-secondary:hover {
-  background: #4338ca; 
-  /* Dunklere Farbe */
-
-  transform: translateY(-2px); 
-  /* Leichte Bewegung nach oben */
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
 }
 
 
 /* ============================= */
-/* ===== RIGHT SIDE ===== */
+/* ===== IMAGE SECTION ===== */
 /* ============================= */
 
-.hero-right {
-  position: relative; 
-  /* Referenzpunkt für absolute Elemente */
+.hero-images-section {
+  /* Mehr Platz oben → wirkt ruhiger */
+  padding: 120px 24px 80px;
 
-  display: grid; 
-  place-items: center; 
-  gap: 24px;
-  /* Bild horizontal + vertikal zentriert */
+  /* Weniger negativ = weiter unten */
+  margin-top: -60px;
+}
+
+.hero-images-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+
+  /* Etwas mehr Abstand zwischen Bildern */
+  gap: 48px;
+
+  flex-wrap: wrap;
 }
 
 
-/* ===== Glow Effekt ===== */
-
-.hero-glow {
-  position: absolute; 
-  /* Frei positioniert */
-
-  inset: -30px; 
-  /* Abstand zu allen Seiten */
-
-  background: rgba(99,102,241,0.15); 
-  /* Transparenter Lila-Effekt */
-
-  border-radius: 50%; 
-  /* Rund */
-
-  filter: blur(60px); 
-  /* Weichzeichnen */
-}
-
-
-/* ===== Bild ===== */
-
-.hero-image {
-  position: relative; 
-  /* Liegt über dem Glow */
-
-  width: 380px; 
-  /* Hälfte der Spaltenbreite */
+/* Bild-Karten */
+.hero-image-card {
+  width: 480px;
   max-width: 100%;
 
-  border-radius: 24px; 
-  /* Abgerundete Ecken */
+  border-radius: 20px;
 
-  box-shadow: 0 30px 60px rgba(0,0,0,0.25); 
-  /* Tiefer Schatten */
+  box-shadow: 0 30px 80px rgba(0,0,0,0.3);
 
-  border: 1px solid white; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effekt */
+.hero-image-card:hover {
+  transform: translateY(10px) scale(1.02);
 }
 
 
-/* ===== Status Card ===== */
-
-.hero-status {
-  position: absolute; 
-  /* Frei positioniert */
-
-  bottom: -60px; 
-  /* 60px unterhalb des Bildes */
-
-  left: -30px; 
-  /* 30px nach links verschoben */
-
-  background: white; 
-  padding: 18px 22px; 
-  border-radius: 16px;
-
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-
-  font-size: 14px; 
-  font-weight: 600; 
-  color: #475569;
-
-  display: flex; 
-  /* Punkt + Text nebeneinander */
-
-  align-items: center; 
-  /* Vertikal zentriert */
-
-  gap: 10px; 
-  /* Abstand zwischen Punkt und Text */
+/* leicht versetztes Layout */
+.hero-image-card:nth-child(2) {
+  margin-top: 60px;
 }
 
-
-/* ===== Grüner Punkt ===== */
-
-.status-dot {
-  width: 10px; 
-  height: 10px; 
-  /* Quadrat */
-
-  background: #10b981; 
-  /* Grün */
-
-  border-radius: 50%; 
-  /* Rund */
-
-  animation: pulse 1.6s infinite; 
-  /* Pulsierende Animation */
-}
-
-@keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: .4; }
-  100% { opacity: 1; }
-}
 
 /* ============================= */
 /* ===== MOBILE ===== */
@@ -339,12 +238,12 @@
 @media (max-width: 768px) {
 
   .hero {
-    padding: 60px 20px 100px;
+    padding: 80px 20px 120px;
   }
 
   .hero-grid {
-    grid-template-columns: 1fr; /* Eine Spalte */
-    gap: 48px;
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .hero-title {
@@ -366,16 +265,12 @@
     text-align: center;
   }
 
-  .hero-image {
-    width: 85%; /* Bild größer */
-  }
-
-  .hero-status {
-    position: static; /* Nicht mehr absolut */
-    margin-top: 20px;
+  .hero-images-section {
+    margin-top: -60px;
   }
 
 }
+
 
 /* ============================= */
 /* ===== TABLET ===== */
@@ -384,24 +279,11 @@
 @media (min-width: 769px) and (max-width: 1024px) {
 
   .hero {
-    padding: 70px 32px 120px;
-  }
-
-  .hero-grid {
-    gap: 48px;
+    padding: 90px 32px 140px;
   }
 
   .hero-title {
     font-size: 42px;
-  }
-
-  .hero-image {
-    width: 70%;
-  }
-
-  .hero-status {
-    bottom: -40px;
-    left: -20px;
   }
 
 }

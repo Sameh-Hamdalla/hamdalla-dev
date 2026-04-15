@@ -9,8 +9,11 @@ import "./portfolio.css";
 import inventar from "../../assets/inventar.png"
 
 import taxi2 from "../../assets/taxi2.png"
+import taxi from "../../assets/taxi.png"
 import telefon from "../../assets/telefon.png"
 import pizza from "../../assets/pizza.png"
+import inventar2 from "../../assets/inventar2.png"
+import inventar3 from "../../assets/inventar3.png"
 // Array mit allen Projekten
 // Jedes Projekt ist ein Objekt mit:
 // - title (Projektname)
@@ -22,8 +25,15 @@ const projects = [
    {
     title: "Taxi Unternehmen",
     category: "Unternehmenswebsite",
-    image: taxi2,
+    image: taxi,
     site: "https://marsaalam-yassin-taxi.vercel.app/"
+  },
+  {
+    title: "Restaurant Pizzeria HAMHAM", // Name des Projekts
+    category: "Individualsoftware", // Kategorie
+    image: pizza, // Lokales importiertes Bild
+    site: "https://restaurant-pizzeria-hamham.vercel.app/" 
+  
   },
   {
     title: "InventarManager-App", // Name des Projekts
@@ -32,13 +42,7 @@ const projects = [
     site: "https://inventar-manager-frontend.vercel.app/inventar" 
   
   },
-    {
-    title: "Restaurant Pizzeria HAMHAM", // Name des Projekts
-    category: "Individualsoftware", // Kategorie
-    image: pizza, // Lokales importiertes Bild
-    site: "https://restaurant-pizzeria-hamham.vercel.app/" 
-  
-  },
+
   {
     title: "Telefonshop",
     category: "E-Commerce",
@@ -79,14 +83,14 @@ const Portfolio: React.FC = () => {
           </div>
 
           {/* Button rechts im Header=> Weiterleitung zu Guthub */}
-          <button className="portfolio-more">
+          {/* <button className="portfolio-more">
             <a href="https://github.com/Sameh-Hamdalla"
             target="_blank"
             rel="noopener noreferrer"
             className="portfolio-github-link">
             Alle Projekte ansehen →
             </a>
-          </button>
+          </button> */}
 
         </div>
 
@@ -134,8 +138,11 @@ const Portfolio: React.FC = () => {
                 <h4>{p.title}</h4>
 
                 {/* Optionaler Kunde (aktuell deaktiviert) */}
-                <a href={p.site} target="_blank" rel="noopener noreferrer">
-                  {p.site}
+                <a href={p.site} target="_blank" rel="noopener noreferrer"
+                className="portfolio-link">
+                  {/* {p.site} */}
+                  Projekt ansehen →
+
                 </a>
 
               </div>

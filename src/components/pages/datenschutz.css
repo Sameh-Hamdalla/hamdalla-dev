@@ -1,0 +1,42 @@
+.datenschutz-container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+  color: #1e293b;
+}
+
+.datenschutz-container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.datenschutz-container h2 {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #0f172a;
+}
+
+.datenschutz-container p {
+  margin: 0.6rem 0;
+}
+
+.datenschutz-container ul {
+  padding-left: 1.4rem;
+}
+
+.datenschutz-container .source {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+@media (max-width: 768px) {
+  .datenschutz-container {
+    padding: 1rem;
+  }
+  
+  .datenschutz-container h1 {
+    font-size: 1.8rem;
+  }
+}

@@ -1,36 +1,10 @@
 import React from "react";
+import './datenschutz.css';
 
 const Datenschutz = () => {
   return (
     <div className="datenschutz-container">
-      <style>{`
-        .datenschutz-container {
-          padding: 2rem;
-          max-width: 900px;
-          margin: 0 auto;
-          font-family: Arial, sans-serif;
-          line-height: 1.6;
-          color: #333;
-        }
 
-        .datenschutz-container h1 {
-          font-size: 2rem;
-          margin-bottom: 1rem;
-        }
-
-        .datenschutz-container h2 {
-          margin-top: 2rem;
-          font-size: 1.3rem;
-        }
-
-        .datenschutz-container p {
-          margin: 0.5rem 0;
-        }
-
-        .datenschutz-container ul {
-          padding-left: 1.2rem;
-        }
-      `}</style>
 
       <h1>Datenschutzerklärung</h1>
 
@@ -147,12 +121,13 @@ const Datenschutz = () => {
       </p>
 
       <h2>13. Quelle</h2>
-      <p style={{ fontSize: "0.85rem", color: "#666" }}>
+      <p className="source">
         Diese Datenschutzerklärung wurde durch den Datenschutzerklärungs-Generator der
         DGD Deutsche Gesellschaft für Datenschutz GmbH, die als Externer
         Datenschutzbeauftragter Mittelfranken tätig ist, in Kooperation mit den
         Datenschutz Anwälten der Kanzlei WILDE BEUGER SOLMECKE | Rechtsanwälte erstellt.
       </p>
+
 
     </div>
   );
