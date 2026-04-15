@@ -1,3 +1,5 @@
+import React from "react";
+
 const Impressum = () => {
   return (
     <div className="impressum-container">
@@ -40,7 +42,8 @@ const Impressum = () => {
       <p><strong>Angaben gemäß § 5 TMG</strong></p>
 
       <p>
-        HAMDALLA WEB<br />
+        HAMDALLA WEB<br />  
+        Webentwicklung & KI-Automatisierung<br />
         Inhaber: Sameh Hamdalla<br />
         Jägerweg 8<br />
         79879 Wutach<br />
@@ -59,7 +62,7 @@ const Impressum = () => {
       <h2>Umsatzsteuer-ID</h2>
       <p>
         Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-        (wird nachgereicht, falls vorhanden)
+        (falls vorhanden)
       </p>
 
       <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
@@ -69,6 +72,30 @@ const Impressum = () => {
         79879 Wutach<br />
         Deutschland
       </p>
+
+      <h2>Haftung für Inhalte</h2>
+      <p>
+        Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. 
+        Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte 
+        können wir jedoch keine Gewähr übernehmen.
+      </p>
+
+      <h2>Haftung für Links</h2>
+      <p>
+        Unsere Website enthält Links zu externen Websites Dritter, auf deren 
+        Inhalte wir keinen Einfluss haben. Deshalb können wir für diese 
+        fremden Inhalte auch keine Gewähr übernehmen.
+      </p>
+
+      <h2>Urheberrecht</h2>
+      <p>
+        Die durch den Seitenbetreiber erstellten Inhalte und Werke auf 
+        diesen Seiten unterliegen dem deutschen Urheberrecht. 
+        Die Vervielfältigung, Bearbeitung und Verbreitung außerhalb der 
+        Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung 
+        des jeweiligen Autors.
+      </p>
+
     </div>
   );
 };

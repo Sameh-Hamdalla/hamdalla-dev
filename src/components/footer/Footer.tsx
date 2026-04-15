@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
           <ul className="footer-list">
             <li><Link to="/impressum">Impressum</Link></li>
             <li><Link to="/datenschutz">Datenschutz</Link></li>
-            <li><Link to="/agb">AGB</Link></li>
+            {/* <li><Link to="/agb">AGB</Link></li> */}
           </ul>
         </div>
 
