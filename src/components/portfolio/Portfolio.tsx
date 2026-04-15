@@ -43,13 +43,13 @@ const projects = [
   
   },
 
-  {
-    title: "Telefonshop",
-    category: "E-Commerce",
-    image: telefon,
-    // Externes Bild über URL
-    site: "https://iphone-landingpage.vercel.app/"
-  },
+  // {
+  //   title: "Telefonshop",
+  //   category: "E-Commerce",
+  //   image: telefon,
+  //   // Externes Bild über URL
+  //   site: "https://iphone-landingpage.vercel.app/"
+  // },
  
 ];
 
