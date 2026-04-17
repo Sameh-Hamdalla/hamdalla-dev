@@ -1,7 +1,6 @@
 import React from "react";
 import "./hero.css";
-import frw2 from "../../assets/frw2.png";
-import klu from "../../assets/klu.png";
+
 
 /**
  * Props Interface:
@@ -53,18 +52,25 @@ const Hero: React.FC<HeroProps> = ({ onOpenConsultant }) => {
               {/* Buttons */}
               <div className="hero-buttons">
 
-                {/* Scrollt zu Leistungen */}
-                <a href="#services" className="btn-primary">
-                  Meine Leistungen
-                </a>
+                {/* <a href="#analysis" className="btn-primary">
+                  Website kostenlos analysieren
+                  <br />
+                  <span>„In 2 Minuten • 100% kostenlos"</span>
+                </a> */}
 
                 {/* Öffnet KI-Berater */}
                 <button
                   onClick={onOpenConsultant}
-                  className="btn-secondary"
+                  className="btn-primary"
                 >
                   KI-Berater fragen
                 </button>
+
+                {/* Scrollt zu Leistungen */}
+                <a href="#services" className="btn-secondary" 
+                >
+                  Meine Leistungen
+                </a>
 
               </div>
             </div>
