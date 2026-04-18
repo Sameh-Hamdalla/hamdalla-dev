@@ -66,21 +66,21 @@ const Header: React.FC = () => {
             <nav className="nav">
 
               <a
-                href="#services"
+                href="/#services"
                 className={activeSection === "services" ? "active" : ""}
               >
                 Leistungen
               </a>
 
               <a
-                href="#portfolio"
+                href="/#portfolio"
                 className={activeSection === "portfolio" ? "active" : ""}
               >
                 Referenzen
               </a>
 
               <a
-                href="#contact"
+                href="/#contact"
                 className={activeSection === "contact" ? "active" : ""}
               >
                 Kontakt
@@ -91,7 +91,7 @@ const Header: React.FC = () => {
             {/* ============================= */}
             {/* ===== CTA BUTTON ===== */}
             {/* ============================= */}
-            <a href="#contact" className="cta-btn">
+            <a href="/#contact" className="cta-btn">
               Projekt anfragen
             </a>
 
@@ -111,20 +111,20 @@ const Header: React.FC = () => {
             {menuOpen && (
               <div className="mobile-menu">
 
-                <a href="#services" onClick={handleCloseMenu}>
+                <a href="/#services" onClick={handleCloseMenu}>
                   Leistungen
                 </a>
 
-                <a href="#portfolio" onClick={handleCloseMenu}>
+                <a href="/#portfolio" onClick={handleCloseMenu}>
                   Referenzen
                 </a>
 
-                <a href="#contact" onClick={handleCloseMenu}>
+                <a href="/#contact" onClick={handleCloseMenu}>
                   Kontakt
                 </a>
 
                 <a
-                  href="#contact"
+                  href="/#contact"
                   className="mobile-cta"
                   onClick={handleCloseMenu}
                 >
