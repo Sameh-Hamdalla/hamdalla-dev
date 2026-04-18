@@ -152,7 +152,16 @@
 
   transition: all 0.2s ease;
 }
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
 
+/* Aktiver Nav Link */
+.nav a.active {
+  color: #a855f7;
+  font-weight: 600;
+}
 .btn-primary:hover {
   background: #4338ca;
   transform: translateY(-2px);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./header.css";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
@@ -6,28 +6,53 @@ import ScrollToTop from "@/src/ScrollToTop";
 
 const Header: React.FC = () => {
 
-  // 🔹 State für Mobile Menü (Burger Menü)
+  // 🔹 Mobile Menü State
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // 🔹 Aktive Section (für Highlight)
+  const [activeSection, setActiveSection] = useState("");
+
+  // 🔹 Scroll Listener für aktive Section
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["services", "portfolio", "contact"];
+
+      sections.forEach((id) => {
+        const el = document.getElementById(id);
+
+        if (el) {
+          const rect = el.getBoundingClientRect();
+
+          if (rect.top <= 120 && rect.bottom >= 120) {
+            setActiveSection(id);
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // 🔹 Menü schließen (sauberer Code)
+  const handleCloseMenu = () => setMenuOpen(false);
 
   return (
     <>
       <header className="header">
         <div className="header-container">
-
           <div className="header-inner">
 
             {/* ============================= */}
-            {/* ===== LOGO (Startseite) ===== */}
+            {/* ===== LOGO ===== */}
             {/* ============================= */}
-            {/* Link navigiert zur Startseite */}
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               className="logo-group"
               onClick={(e) => {
-                // 👉 Wenn wir schon auf der Startseite sind:
                 if (window.location.pathname === "/") {
-                  e.preventDefault(); // verhindert "Neuladen"
-                  window.scrollTo({ top: 0, behavior: "smooth" }); // smooth scroll nach oben
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
                 }
               }}
             >
@@ -40,29 +65,42 @@ const Header: React.FC = () => {
             {/* ============================= */}
             <nav className="nav">
 
-              {/* 🔹 Scroll innerhalb der Seite (kein Reload) */}
-              <a href="#services">Leistungen</a>
+              <a
+                href="#services"
+                className={activeSection === "services" ? "active" : ""}
+              >
+                Leistungen
+              </a>
 
-              <a href="#portfolio">Referenzen</a>
+              <a
+                href="#portfolio"
+                className={activeSection === "portfolio" ? "active" : ""}
+              >
+                Referenzen
+              </a>
 
-              <a href="#contact">Kontakt</a>
+              <a
+                href="#contact"
+                className={activeSection === "contact" ? "active" : ""}
+              >
+                Kontakt
+              </a>
 
             </nav>
 
             {/* ============================= */}
             {/* ===== CTA BUTTON ===== */}
             {/* ============================= */}
-            {/* Wichtigster Button → führt zum Kontakt */}
             <a href="#contact" className="cta-btn">
               Projekt anfragen
             </a>
 
             {/* ============================= */}
-            {/* ===== BURGER BUTTON (Mobile) ===== */}
+            {/* ===== BURGER BUTTON ===== */}
             {/* ============================= */}
-            <button 
+            <button
               className="burger"
-              onClick={() => setMenuOpen(!menuOpen)} // öffnet/schließt Menü
+              onClick={() => setMenuOpen(prev => !prev)}
             >
               ☰
             </button>
@@ -71,27 +109,24 @@ const Header: React.FC = () => {
             {/* ===== MOBILE MENU ===== */}
             {/* ============================= */}
             {menuOpen && (
-
               <div className="mobile-menu">
 
-                {/* Beim Klick wird Menü geschlossen */}
-                <a href="#services" onClick={() => setMenuOpen(false)}>
+                <a href="#services" onClick={handleCloseMenu}>
                   Leistungen
                 </a>
 
-                <a href="#portfolio" onClick={() => setMenuOpen(false)}>
+                <a href="#portfolio" onClick={handleCloseMenu}>
                   Referenzen
                 </a>
 
-                <a href="#contact" onClick={() => setMenuOpen(false)}>
+                <a href="#contact" onClick={handleCloseMenu}>
                   Kontakt
                 </a>
 
-                {/* CTA im Mobile Menü */}
-                <a 
-                  href="#contact" 
-                  className="mobile-cta" 
-                  onClick={() => setMenuOpen(false)}
+                <a
+                  href="#contact"
+                  className="mobile-cta"
+                  onClick={handleCloseMenu}
                 >
                   Projekt anfragen
                 </a>
@@ -103,10 +138,7 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* ============================= */}
-      {/* ===== SCROLL TO TOP ===== */}
-      {/* ============================= */}
-      {/* sorgt dafür, dass beim Seitenwechsel nach oben gescrollt wird */}
+      {/* Scroll Verhalten bei Seitenwechsel */}
       <ScrollToTop />
     </>
   );
