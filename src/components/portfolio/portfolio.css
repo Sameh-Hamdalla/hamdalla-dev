@@ -1,164 +1,180 @@
-/* ===== Section ===== */
+/* ============================= */
+/* ===== SECTION ===== */
+/* ============================= */
+
 .portfolio {
-  background: white;
+  background: #ffffff;
   padding: 120px 24px;
 }
 
-/* ===== Container ===== */
+/* ============================= */
+/* ===== CONTAINER ===== */
+/* ============================= */
+
 .portfolio-container {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ===== Head ===== */
+/* ============================= */
+/* ===== HEADER ===== */
+/* ============================= */
+
 .portfolio-head {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  gap: 24px;
   margin-bottom: 80px;
-  flex-wrap: wrap;
 }
 
 .portfolio-kicker {
-  font-size: 14px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #4f46e5;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .portfolio-title {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 800;
   color: #0f172a;
 }
 
-.portfolio-link {
-  display: inline-block;
-  margin-top: 8px;
+/* ============================= */
+/* ===== GRID ===== */
+/* ============================= */
 
-  font-weight: 600;
-  color: #4f46e5;
-
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.portfolio-link:hover {
-  color: #4338ca;
-  transform: translateX(4px); /* kleiner Slide Effekt */
-}
-
-.portfolio-more {
-  background: none;
-  border: none;
-  font-weight: 700;
-  color: #4f46e5;
-  cursor: pointer;
-  font-size: 15px;
-  transition: color 0.2s ease;
-}
-
-.portfolio-more:hover {
-  color: #4338ca;
-}
-
-/* ===== Grid ===== */
 .portfolio-grid {
   display: grid;
-  /* Max 2 Spalten, aber flexibel */
-  grid-template-columns: repeat(1fr);
-
-  gap: 48px;
-
-  max-width: 1100px; /* begrenzt Breite → Bilder wirken größer */
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-/* ===== Card ===== */
+/* ============================= */
+/* ===== CARD ===== */
+/* ============================= */
+
 .portfolio-card {
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: 0.3s ease;
 }
 
-/* ===== Image Box ===== */
+.portfolio-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ============================= */
+/* ===== TITLE (OBEN) ===== */
+/* ============================= */
+
+.portfolio-project-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+/* ============================= */
+/* ===== CATEGORY ===== */
+/* ============================= */
+
+.portfolio-category-top {
+  font-size: 15px;            /* 🔥 größer */
+  font-weight: 700;           /* stärker */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #4f46e5;
+
+  margin-bottom: 10px;
+  display: inline-block;
+
+  background: rgba(79, 70, 229, 0.1); /* 🔥 leichter Hintergrund */
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* ============================= */
+/* ===== IMAGE BOX ===== */
+/* ============================= */
+
 .portfolio-image-box {
   position: relative;
+  display: block;
   overflow: hidden;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  aspect-ratio: 16 / 10;
+  border-radius: 18px;
+  aspect-ratio: 16 / 8;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
-/* image */
+/* Bild */
 .portfolio-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
-  border-radius: 15px;
-  
 }
 
-/* zoom on hover */
+/* Zoom Effekt */
 .portfolio-card:hover .portfolio-image {
-  transform: translateY(-8px);
+  transform: scale(1.05);
 }
 
-/* ===== Overlay ===== */
+/* ============================= */
+/* ===== OVERLAY ===== */
+/* ============================= */
+
 .portfolio-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(49,46,129,0.45);
+  background: rgba(15, 23, 42, 0.6);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: 0.3s ease;
 }
 
+/* Overlay sichtbar bei Hover */
 .portfolio-card:hover .portfolio-overlay {
   opacity: 1;
 }
 
-.portfolio-overlay span {
-  background: white;
-  color: #312e81;
-  font-weight: 700;
-  padding: 12px 22px;
-  border-radius: 999px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-/* ===== Text ===== */
-.portfolio-text {
-  padding: 0 6px;
-}
-
-.portfolio-category {
-  font-size: 14px;
+/* Overlay Text */
+.portfolio-overlay-text {
+  color: #ffffff;
   font-weight: 600;
-  color: #4f46e5;
-  display: block;
-  margin-bottom: 6px;
+  font-size: 14px;
+
+  border: 1px solid white;
+  padding: 10px 16px;
+  border-radius: 999px;
+
+  backdrop-filter: blur(6px);
 }
 
-.portfolio-text h4 {
-  font-size: 22px;
-  font-weight: 800;
-  color: #0f172a;
-  margin-bottom: 4px;
+/* ============================= */
+/* ===== DIVIDER ===== */
+/* ============================= */
+
+.portfolio-divider {
+  margin-top: 30px;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(79, 70, 229, 0.4),
+    transparent
+  );
 }
 
-.portfolio-text p {
-  color: #64748b;
-  font-size: 15px;
-}
 /* ============================= */
 /* ===== MOBILE ===== */
 /* ============================= */
@@ -170,7 +186,7 @@
   }
 
   .portfolio-head {
-    margin-bottom: 48px;
+    margin-bottom: 50px;
   }
 
   .portfolio-title {
@@ -178,37 +194,11 @@
   }
 
   .portfolio-grid {
-    grid-template-columns: 1fr; /* 1 Spalte */
-    /* gap: 32px; */
+    gap: 40px;
   }
 
-  .portfolio-text h4 {
-    font-size: 20px;
-  }
-
-  .portfolio-text p {
-    font-size: 14px;
-  }
-
-}
-
-/* ============================= */
-/* ===== TABLET ===== */
-/* ============================= */
-
-@media (min-width: 769px) and (max-width: 1024px) {
-
-  .portfolio {
-    padding: 100px 32px;
-  }
-
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
-    gap: 32px;
-  }
-
-  .portfolio-title {
-    font-size: 34px;
+  .portfolio-project-title {
+    font-size: 18px;
   }
 
 }
