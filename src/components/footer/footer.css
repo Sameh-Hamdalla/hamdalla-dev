@@ -46,7 +46,47 @@
 .footer a:hover {
   color: #6366f1;
 }
+.footer-socials {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+}
 
+.footer-socials a {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+
+  color: #94a3b8;
+  font-size: 18px;
+
+  transition: 0.3s;
+}
+
+/* Hover Effekt */
+.footer-socials a:hover {
+  color: #ffffff;
+  background: rgba(79, 70, 229, 0.2);
+  transform: translateY(-3px);
+}
+
+.footer-socials a:nth-child(1):hover {
+  color: #e1306c; /* Instagram */
+}
+
+.footer-socials a:nth-child(2):hover {
+  color: #0077b5; /* LinkedIn */
+}
+
+.footer-socials a:nth-child(3):hover {
+  color: #ffffff; /* GitHub */
+}
 /* ===== Bottom ===== */
 .footer-bottom {
   border-top: 1px solid #1e293b;

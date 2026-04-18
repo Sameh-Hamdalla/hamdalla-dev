@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./footer.css";
+import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
@@ -32,6 +33,38 @@ const Footer: React.FC = () => {
           <a href="mailto:info@hamdalla-web.com">
             info@hamdalla-web.com
           </a>
+          <div className="footer-col">
+  
+
+            {/* 🔥 SOCIAL LINKS */}
+            <div className="footer-socials">
+
+              <a 
+                href="https://www.instagram.com/hamdalla.web/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <FaInstagram/>
+              </a>
+
+              <a 
+                href="https://www.linkedin.com/in/sameh-hamdalla-214a68215/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin/>
+              </a>
+
+              <a 
+                href="https://github.com/Sameh-Hamdalla" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <FaGithub/>
+              </a>
+
+            </div>
+          </div>
         </div>
 
         {/* 4. Rechtliches */}
