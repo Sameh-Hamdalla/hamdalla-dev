@@ -22,18 +22,19 @@ const projects = [
     image: pizza,
     site: "https://restaurant-pizzeria-hamham.vercel.app/"
   },
+   {
+    title: "Friseur Buchungssystem",
+    category: "Individualsoftware",
+    image: salon,
+    site: "https://friseur-app-phi.vercel.app/"
+  },
   {
     title: "InventarManager-App",
     category: "Individualsoftware",
     image: inventar,
     site: "https://inventar-manager-frontend.vercel.app/inventar"
   },
-   {
-    title: "Friseur Buchungssystem",
-    category: "Individualsoftware",
-    image: salon,
-    site: "https://friseur-app-phi.vercel.app/"
-  }
+  
 ];
 
 
