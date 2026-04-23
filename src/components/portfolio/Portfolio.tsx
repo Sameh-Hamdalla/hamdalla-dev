@@ -4,6 +4,7 @@ import "./portfolio.css";
 import taxi from "../../assets/taxi.png";
 import pizza from "../../assets/pizza.png";
 import inventar from "../../assets/inventar.png";
+import salon from "../../assets/salon.png";
 
 // =============================
 // 🔹 PROJEKTDATEN
@@ -26,6 +27,12 @@ const projects = [
     category: "Individualsoftware",
     image: inventar,
     site: "https://inventar-manager-frontend.vercel.app/inventar"
+  },
+   {
+    title: "Friseur Buchungssystem",
+    category: "Individualsoftware",
+    image: salon,
+    site: "https://friseur-app-phi.vercel.app/"
   }
 ];
 

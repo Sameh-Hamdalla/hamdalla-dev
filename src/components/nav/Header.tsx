@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./header.css";
-import logo from "../../assets/logo.png";
+import logo2 from "../../assets/logo2.png";
 import { Link } from "react-router-dom";
 import ScrollToTop from "@/src/ScrollToTop";
 
@@ -56,7 +56,7 @@ const Header: React.FC = () => {
                 }
               }}
             >
-              <img src={logo} alt="Hamdalla Web Logo" className="logo-img" />
+              <img src={logo2} alt="Hamdalla Web Logo" className="logo-img" />
               <span className="logo-text">HAMDALLA WEB</span>
             </Link>
 
