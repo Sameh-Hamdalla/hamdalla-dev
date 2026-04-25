@@ -5,6 +5,16 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('/public/fonts/inter/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: 'Inter', sans-serif;
+}
 /* ===== Body Background ===== */
 body {
   background: linear-gradient(
