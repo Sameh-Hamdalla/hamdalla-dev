@@ -43,7 +43,7 @@ const Impressum = () => {
 
       <p>
         HAMDALLA WEB<br />  
-        Webentwicklung & KI-Automatisierung<br />
+        {/* Webentwicklung & KI-Automatisierung<br /> */}
         Inhaber: Sameh Hamdalla<br />
         Jägerweg 8<br />
         79879 Wutach<br />
@@ -59,11 +59,11 @@ const Impressum = () => {
         </a>
       </p>
 
-      <h2>Umsatzsteuer-ID</h2>
+      {/* <h2>Umsatzsteuer-ID</h2>
       <p>
         Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-        (falls vorhanden)
-      </p>
+        (wird noch ergänzt, sobald vorhanden)
+      </p> */}
 
       <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
       <p>
