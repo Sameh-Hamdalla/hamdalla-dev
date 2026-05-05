@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
         <div className="footer-col">
           <h3>HAMDALLA WEB</h3>
           <p className="footer-desc">
-            Weblösungen für dein Business
+            Webdesign & Softwarelösungen für KMUs und Einzelhandel
           </p>
         </div>
 
