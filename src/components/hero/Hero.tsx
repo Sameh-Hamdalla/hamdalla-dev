@@ -32,21 +32,19 @@ const Hero: React.FC<HeroProps> = ({ onOpenConsultant }) => {
 
               {/* Badge / kleine Info */}
               <span className="hero-badge">
-                Exklusiv für KMUs & Einzelhandel
+                Webdesign & Softwarelösungen für KMUs und Einzelhandel
               </span>
 
               {/* Hauptüberschrift */}
               <h1 className="hero-title">
-                Ihre Vision,
-                <span className="accent"> digital perfektioniert.</span>
+                Webdesign Schwarzwald –
+                <span className="accent"> moderne Websites & Onlineshops</span>
               </h1>
 
               {/* Beschreibungstext */}
               <p className="hero-text">
-                Vom lokalen Laden zum digitalen Vorreiter.
-                Ich entwickle maßgeschneiderte Softwarelösungen,
-                Webseiten und Onlineshops, die Ihr Geschäft
-                wirklich voranbringen.
+                Ich erstelle professionelle Webseiten, Onlineshops und individuelle Softwarelösungen
+                für kleine und mittelständische Unternehmen, die online mehr Kunden gewinnen wollen.
               </p>
 
               {/* Buttons */}
@@ -63,7 +61,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenConsultant }) => {
                   onClick={onOpenConsultant}
                   className="btn-primary"
                 >
-                  KI-Berater fragen
+                   Kostenlose Website-Beratung starten
                 </button>
 
                 {/* Scrollt zu Leistungen */}
