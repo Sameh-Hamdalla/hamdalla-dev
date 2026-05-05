@@ -5,6 +5,8 @@ import taxi from "../../assets/taxi.png";
 import pizza from "../../assets/pizza.png";
 import inventar from "../../assets/inventar.png";
 import salon from "../../assets/salon.png";
+import werkmeister from "../../assets/werkmeister.png";
+
 
 // =============================
 // 🔹 PROJEKTDATEN
@@ -14,27 +16,43 @@ const projects = [
     title: "Taxi Unternehmen",
     category: "Unternehmenswebsite",
     image: taxi,
+    description:
+      "Eine übersichtliche Unternehmenswebsite für ein Taxiunternehmen mit klaren Informationen, direkter Kontaktmöglichkeit und responsivem Aufbau. Umgesetzt mit HTML, CSS und JavaScript.",
     site: "https://marsaalam-yassin-taxi.vercel.app/"
   },
   {
     title: "Restaurant Pizzeria HAMHAM",
     category: "Individualsoftware",
     image: pizza,
+    description:
+      "Eine moderne Restaurant-Website mit digitaler Speisekarte, ansprechender Präsentation und nutzerfreundlicher Bedienung auf allen Geräten. Entwickelt mit React, HTML, CSS und JavaScript.",
     site: "https://restaurant-pizzeria-hamham.vercel.app/"
   },
    {
     title: "Friseur Buchungssystem",
     category: "Individualsoftware",
     image: salon,
+    description:
+      "Ein digitales Buchungssystem für Friseursalons, mit dem Kunden Dienstleistungen entdecken und Termine einfach anfragen können. Erstellt mit React, HTML, CSS und JavaScript.",
     site: "https://friseur-app-phi.vercel.app/"
+  },
+    {
+    title: "WerkMeister",
+    category: "Individualsoftware",
+    image: werkmeister,
+    description:
+      "Eine Web-App für Handwerksbetriebe zur strukturierten Verwaltung von Aufträgen, Abläufen und wichtigen Arbeitsinformationen. Frontend mit React, Backend mit Python, FastAPI und SQLite.",
+    site: "https://werk-meister-zeta.vercel.app/"
   },
   {
     title: "InventarManager-App",
     category: "Individualsoftware",
     image: inventar,
+    description:
+      "Eine Inventarverwaltung für Unternehmen, um Produkte, Bestände und wichtige Daten zentral, schnell und zuverlässig zu organisieren. Frontend mit React, Backend mit Python, FastAPI und SQLite.",
     site: "https://inventar-manager-frontend.vercel.app/inventar"
   },
-  
+ 
 ];
 
 
@@ -70,6 +88,10 @@ const Portfolio: React.FC = () => {
               <span className="portfolio-category-top">
                 {p.category}
               </span>
+
+              <p className="portfolio-description">
+                {p.description}
+              </p>
 
               {/* 🔥 BILD + OVERLAY */}
               <a
