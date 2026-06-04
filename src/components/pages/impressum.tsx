@@ -14,7 +14,7 @@ const Impressum = () => {
 
       <section className="legal-content">
         <article className="legal-section legal-highlight">
-          <h2>Angaben gemäß § 5 TMG</h2>
+          <h2>Angaben gemäß § 5 DDG</h2>
           <p>
             HAMDALLA WEB<br />
             Inhaber: Sameh Hamdalla<br />
@@ -31,9 +31,16 @@ const Impressum = () => {
             E-Mail: <a href="mailto:info@hamdalla-web.com">info@hamdalla-web.com</a>
           </p>
         </article>
+        <article className="legal-section">
+        <h2>Wirtschafts-Identifikationsnummer</h2>
+          <p>
+            Wirtschafts-Identifikationsnummer gemäß § 139c AO:<br />
+            DE462526439
+          </p>
+        </article>
 
         <article className="legal-section">
-          <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+          <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
           <p>
             Sameh Hamdalla<br />
             Jägerweg 8<br />

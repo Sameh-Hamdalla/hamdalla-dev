@@ -12,6 +12,7 @@ import ScrollToTop from "./ScrollToTop";
 
 import Impressum from "./components/pages/impressum";
 import Datenschutz from "./components/pages/datenschutz";
+import CookieBanner from "./components/cookie/CookieBanner";
 
 import "./components/Services/ai-consultant.css";
 
@@ -43,6 +44,7 @@ const App: React.FC = () => {
                 <Services />
                 <Portfolio />
                 <Contact />
+                
               </>
             }
           />
