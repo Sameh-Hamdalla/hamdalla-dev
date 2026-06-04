@@ -6,6 +6,10 @@ import pizza from "../../assets/pizza.png";
 import inventar from "../../assets/inventar.png";
 import salon from "../../assets/salon.png";
 import werkmeister from "../../assets/werkmeister.png";
+import sammel1 from "../../assets/sammel1.png";
+import sammel2 from "../../assets/sammel2.png";
+import sammel3 from "../../assets/sammel3.png";
+import sammel4 from "../../assets/sammel4.png";
 
 
 // =============================
@@ -13,6 +17,15 @@ import werkmeister from "../../assets/werkmeister.png";
 // =============================
 const projects = [
   {
+    title: "Sammelzentrum Desktop Version",
+    category: "Desktop Software",
+    image: sammel1,
+    gallery: [sammel1, sammel2, sammel3, sammel4],
+    description:
+      "Individuell entwickelte Desktop-Anwendung für die Sammelzentrale Aktion Hoffnung Laupheim. Die Software ermöglicht die Verwaltung von Projekten, Trägerorganisationen und Ansprechpartnern. Enthalten sind Such- und Filterfunktionen, PDF- und Excel-Export, Statistiken, Datensicherung sowie eine lokale Datenbank. Entwickelt mit React, Electron und FastAPI."
+    // site: "https://marsaalam-yassin-taxi.vercel.app/"
+  },
+    {
     title: "Taxi Unternehmen",
     category: "Unternehmenswebsite",
     image: taxi,
@@ -59,6 +72,60 @@ const projects = [
 // =============================
 // 🔹 COMPONENT
 // =============================
+const ProjectCarousel = ({
+  images,
+  title,
+}: {
+  images: string[];
+  title: string;
+}) => {
+  const [activeImage, setActiveImage] = React.useState(0);
+
+  const previousImage = () => {
+    setActiveImage((current) =>
+      current === 0 ? images.length - 1 : current - 1
+    );
+  };
+
+  const nextImage = () => {
+    setActiveImage((current) =>
+      current === images.length - 1 ? 0 : current + 1
+    );
+  };
+
+  return (
+    <div className="portfolio-carousel">
+      <button
+        type="button"
+        className="portfolio-carousel-btn portfolio-carousel-btn-left"
+        onClick={previousImage}
+        aria-label="Vorheriges Bild"
+      >
+        &lsaquo;
+      </button>
+
+      <img
+        src={images[activeImage]}
+        alt={`${title} Screenshot ${activeImage + 1}`}
+        className="portfolio-image"
+      />
+
+      <button
+        type="button"
+        className="portfolio-carousel-btn portfolio-carousel-btn-right"
+        onClick={nextImage}
+        aria-label="Nächstes Bild"
+      >
+        &rsaquo;
+      </button>
+
+      <div className="portfolio-carousel-counter">
+        {activeImage + 1} / {images.length}
+      </div>
+    </div>
+  );
+};
+
 const Portfolio: React.FC = () => {
 
   return (
@@ -94,11 +161,14 @@ const Portfolio: React.FC = () => {
               </p>
 
               {/* 🔥 BILD + OVERLAY */}
-              <a
-                href={p.site}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="portfolio-image-box"
+              {p.gallery ? (
+                 <ProjectCarousel images={p.gallery} title={p.title} />
+              ) : (
+                <a
+                  href={p.site}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="portfolio-image-box"
               >
 
                 <img
@@ -115,6 +185,7 @@ const Portfolio: React.FC = () => {
                 </div>
 
               </a>
+              )}
 
               {/* Divider */}
               <div className="portfolio-divider" />
@@ -124,9 +195,7 @@ const Portfolio: React.FC = () => {
           ))}
 
         </div>
-
       </div>
-
     </section>
   );
 };
