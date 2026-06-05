@@ -1,121 +1,48 @@
-import React, { useRef } from "react";
-import "./Contact.css";
+import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+import "./Contact.css";
 
-/**
- * Contact Component
- *
- * Diese Komponente zeigt:
- * - Kontaktinformationen (links)
- * - Ein Kontaktformular (rechts)
- *
- * Ziel:
- * Wenn das Formular abgeschickt wird,
- * soll EmailJS eine E-Mail versenden – ohne Backend.
- */
 const Contact: React.FC = () => {
-
-  /**
-   * formRef ist eine Referenz auf das echte HTML-Formular.
-   *
-   * Warum brauchen wir das?
-   * EmailJS benötigt das echte <form>-Element,
-   * um alle Felder mit name="..." auszulesen.
-   *
-   * HTMLFormElement | null bedeutet:
-   * - Es wird ein echtes <form> sein
-   * - Am Anfang ist es noch null (bevor React gerendert hat)
-   */
   const formRef = useRef<HTMLFormElement | null>(null);
+  const [formStatus, setFormStatus] = useState<"idle" | "success" | "error">("idle");
+  const [isSending, setIsSending] = useState(false);
 
-
-  /**
-   * Diese Funktion wird aufgerufen,
-   * wenn das Formular abgeschickt wird.
-   *
-   * e = Event-Objekt vom Formular
-   */
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-
-    /**
-     * Verhindert das Standard-Verhalten des Formulars.
-     *
-     * Normalerweise würde:
-     * - die Seite neu laden
-     * - oder ein Redirect passieren
-     *
-     * Das wollen wir NICHT.
-     */
     e.preventDefault();
+    setFormStatus("idle");
 
-    /**
-     * Sicherheitscheck:
-     * Falls das Formular noch nicht existiert,
-     * beenden wir die Funktion sofort.
-     */
     if (!formRef.current) return;
 
+    setIsSending(true);
 
-    /**
-     * Jetzt senden wir die Daten an EmailJS.
-     *
-     * sendForm() liest automatisch:
-     * - alle Felder mit name="..."
-     * - erstellt daraus ein Objekt
-     * - füllt das Template
-     * - sendet die E-Mail
-     */
     emailjs
       .sendForm(
-        "service_8l5sbx5",       // Meine Service ID (Gmail-Verbindung)
-        "template_pg0whwh",      // Meine Template ID (E-Mail Vorlage)
-        formRef.current,         // Das echte <form>-Element
-        "xs4NNYHVqLoEiUXeY"       //Meine Public Key (Projekt-Schlüssel)
+        "service_8l5sbx5",
+        "template_pg0whwh",
+        formRef.current,
+        "xs4NNYHVqLoEiUXeY"
       )
-
-      /**
-       * .then() läuft, wenn alles erfolgreich war.
-       */
       .then(() => {
-        alert("✅ Nachricht wurde gesendet!");
-
-        /**
-         * reset() leert alle Eingabefelder.
-         */
+        setFormStatus("success");
         formRef.current?.reset();
       })
-
-      /**
-       * .catch() läuft, wenn ein Fehler passiert ist.
-       * Zum Beispiel:
-       * - falsche IDs
-       * - kein Internet
-       * - Template falsch
-       */
       .catch((err) => {
         console.log("EmailJS error:", err);
-        alert("❌ Fehler beim Senden. Bitte später erneut versuchen.");
+        setFormStatus("error");
+      })
+      .finally(() => {
+        setIsSending(false);
       });
   };
 
   return (
-
-    /**
-     * Haupt-Container der Kontaktsektion
-     */
     <section id="contact" className="contact">
-
-      {/* Dekoratives Hintergrund-Element */}
       <div className="contact-glow"></div>
 
       <div className="contact-container">
         <div className="contact-grid">
-
-          {/* ===================== */}
-          {/* Linke Seite: Infos   */}
-          {/* ===================== */}
           <div className="contact-left">
-
             <h2 className="contact-kicker">Kontakt</h2>
 
             <h3 className="contact-title">
@@ -125,23 +52,24 @@ const Contact: React.FC = () => {
             </h3>
 
             <p className="contact-desc">
-              Haben Sie eine Idee oder eine Problemstellung?
-              Ich freue mich auf Ihre Nachricht und melde mich
-              innerhalb von 24 Stunden bei Ihnen zurück.
+              Haben Sie eine Idee oder eine Problemstellung? Ich freue mich auf Ihre
+              Nachricht und melde mich innerhalb von 24 Stunden bei Ihnen zurück.
             </p>
 
-            {/* Kontaktinformationen */}
-            <div className="contact-info contact-links">
+            <ul className="contact-benefits">
+              <li>Persönliche Beratung statt Standardlösung</li>
+              <li>Unverbindliche Ersteinschätzung</li>
+              <li>Antwort meist innerhalb von 24 Stunden</li>
+            </ul>
 
-              {/* Email Block */}
+            <div className="contact-info contact-links">
               <div className="info-item">
-                <div className="info-icon">✉</div>
+                <div className="info-icon" aria-hidden="true">✉</div>
 
                 <div>
                   <p className="info-label">Schreiben Sie mir</p>
 
                   <div className="info-value">
-                    {/* mailto öffnet nur das Mailprogramm */}
                     <a href="mailto:info@hamdalla-web.com">
                       info@hamdalla-web.com
                     </a>
@@ -149,47 +77,39 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              {/* Standort */}
               <div className="info-item">
-                <div className="info-icon">📍</div>
+                <div className="info-icon" aria-hidden="true">⌖</div>
 
                 <div>
                   <p className="info-label">Standort</p>
                   <p className="info-value">Remote Deutschland</p>
                 </div>
               </div>
-
             </div>
           </div>
 
-
-          {/* ===================== */}
-          {/* Rechte Seite: Formular */}
-          {/* ===================== */}
           <div className="contact-card">
-
-            {/* 
-              WICHTIG:
-              ref verbindet das Formular mit formRef
-              onSubmit ruft sendEmail auf
-            */}
             <form
               ref={formRef}
               onSubmit={sendEmail}
               className="contact-form"
             >
+              <div className="form-head">
+                <h4 className="form-title">Projekt anfragen</h4>
+                <p className="form-desc">
+                  Füllen Sie das Formular kurz aus. Ich prüfe Ihre Anfrage und melde
+                  mich zeitnah mit einer ersten Einschätzung.
+                </p>
+              </div>
 
-              {/* Name + Email */}
               <div className="form-grid">
+                <div className="form-field">
+                  <label htmlFor="name">
+                    Ihr Name <span className="required">*</span>
+                  </label>
 
-                <div>
-                  <label>Ihr Name</label>
-
-                  {/* 
-                    name="name" ist extrem wichtig!
-                    EmailJS liest nur Felder mit name=""
-                  */}
                   <input
+                    id="name"
                     type="text"
                     name="name"
                     placeholder="Max Mustermann"
@@ -197,10 +117,13 @@ const Contact: React.FC = () => {
                   />
                 </div>
 
-                <div>
-                  <label>E-Mail Adresse</label>
+                <div className="form-field">
+                  <label htmlFor="email">
+                    E-Mail Adresse <span className="required">*</span>
+                  </label>
 
                   <input
+                    id="email"
                     type="email"
                     name="email"
                     placeholder="max@beispiel.de"
@@ -209,31 +132,39 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              {/* Betreff */}
-              <div>
-                <label>Betreff</label>
+              <div className="form-field">
+                <label htmlFor="phone">Telefonnummer <span>optional</span></label>
 
-                <select name="subject" required>
-                  <option value="Neue Webseite / Onlineshop">
-                    Neue Webseite / Onlineshop
-                  </option>
-                  <option value="Webseiteoptimierung">
-                    Webseiteoptimierung
-                  </option>
-                  <option value="Landingpage">
-                    Landingpage
-                  </option>
-                  <option value="Sonstiges">
-                    Sonstiges
-                  </option>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="+49 ..."
+                />
+              </div>
+
+              <div className="form-field">
+                <label htmlFor="subject">
+                  Betreff <span className="required">*</span>
+                </label>
+
+                <select id="subject" name="subject" required>
+                  <option value="Neue Website">Neue Website</option>
+                  <option value="Website modernisieren">Website modernisieren</option>
+                  <option value="Onlineshop">Onlineshop</option>
+                  <option value="Individuelle Software">Individuelle Software</option>
+                  <option value="Wartung & Support">Wartung & Support</option>
+                  <option value="Sonstiges">Sonstiges</option>
                 </select>
               </div>
 
-              {/* Nachricht */}
-              <div>
-                <label>Ihre Nachricht</label>
+              <div className="form-field">
+                <label htmlFor="message">
+                  Ihre Nachricht <span className="required">*</span>
+                </label>
 
                 <textarea
+                  id="message"
                   name="message"
                   rows={4}
                   placeholder="Erzählen Sie mir kurz von Ihrem Projekt..."
@@ -248,20 +179,38 @@ const Contact: React.FC = () => {
                   name="privacy"
                   required
                 />
+
                 <label htmlFor="privacy" className="privacy-label">
                   Ich stimme der Verarbeitung meiner Daten zu. <br />
-                  (Datenschutzerklärung lesen)
+                  <Link to="/datenschutz" className="privacy-link">
+                    Datenschutzerklärung lesen
+                  </Link>
                 </label>
               </div>
 
-              {/* Submit Button */}
-              <button type="submit" className="submit-btn">
-                Anfrage absenden
+              <button type="submit" className="submit-btn" disabled={isSending}>
+                {isSending ? "Wird gesendet..." : "Anfrage absenden"}
               </button>
 
+              <p className="form-note">
+                Ihre Anfrage ist unverbindlich. Ich melde mich in der Regel innerhalb von 24 Stunden.
+              </p>
+
+              <div aria-live="polite">
+                {formStatus === "success" && (
+                  <p className="form-message form-message-success">
+                    Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.
+                  </p>
+                )}
+
+                {formStatus === "error" && (
+                  <p className="form-message form-message-error">
+                    Leider konnte Ihre Nachricht nicht gesendet werden. Bitte versuchen Sie es später erneut.
+                  </p>
+                )}
+              </div>
             </form>
           </div>
-
         </div>
       </div>
     </section>

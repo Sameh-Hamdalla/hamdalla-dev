@@ -1,113 +1,69 @@
 import React from "react";
 import "./hero.css";
 
+import sammel1 from "../../assets/sammel1.png";
 
-/**
- * Props Interface:
- * Beschreibt welche Daten diese Komponente von außen bekommt
- */
 interface HeroProps {
   onOpenConsultant: () => void;
 }
 
-/**
- * Hero Component:
- * - Oben: Hero Bereich (Text + Buttons)
- * - Darunter: Image Section (separate visuelle Cards)
- */
 const Hero: React.FC<HeroProps> = ({ onOpenConsultant }) => {
   return (
-    <>
-      {/* ============================= */}
-      {/* ===== HERO SECTION ===== */}
-      {/* ============================= */}
-      <section className="hero">
+    <section className="hero">
+      <div className="hero-container">
+        <div className="hero-grid">
+          <div className="hero-left">
+            <span className="hero-badge">
+              Webdesign & Softwarelösungen für KMUs und Einzelhandel
+            </span>
 
-        <div className="hero-container">
+            <h1 className="hero-title">
+              Webdesign Schwarzwald -
+              <span className="accent"> moderne Websites & Onlineshops</span>
+            </h1>
 
-          <div className="hero-grid">
+            <p className="hero-text">
+              Ich erstelle professionelle Webseiten, Onlineshops und individuelle
+              Softwarelösungen für kleine und mittelständische Unternehmen, die
+              online mehr Kunden gewinnen wollen.
+            </p>
 
-            {/* ===== LEFT SIDE (Text + CTA) ===== */}
-            <div className="hero-left">
+            <div className="hero-buttons">
+              <button
+                type="button"
+                onClick={onOpenConsultant}
+                className="btn-primary"
+              >
+                Kostenlose Website-Beratung starten
+              </button>
 
-              {/* Badge / kleine Info */}
-              <span className="hero-badge">
-                Webdesign & Softwarelösungen für KMUs und Einzelhandel
-              </span>
-
-              {/* Hauptüberschrift */}
-              <h1 className="hero-title">
-                Webdesign Schwarzwald –
-                <span className="accent"> moderne Websites & Onlineshops</span>
-              </h1>
-
-              {/* Beschreibungstext */}
-              <p className="hero-text">
-                Ich erstelle professionelle Webseiten, Onlineshops und individuelle Softwarelösungen
-                für kleine und mittelständische Unternehmen, die online mehr Kunden gewinnen wollen.
-              </p>
-
-              {/* Buttons */}
-              <div className="hero-buttons">
-
-                {/* <a href="#analysis" className="btn-primary">
-                  Website kostenlos analysieren
-                  <br />
-                  <span>„In 2 Minuten • 100% kostenlos"</span>
-                </a> */}
-
-                {/* Öffnet KI-Berater */}
-                <button
-                  onClick={onOpenConsultant}
-                  className="btn-primary"
-                >
-                   Kostenlose Website-Beratung starten
-                </button>
-
-                {/* Scrollt zu Leistungen */}
-                <a href="#services" className="btn-secondary" 
-                >
-                  Meine Leistungen
-                </a>
-
-              </div>
+              <a href="#services" className="btn-secondary">
+                Meine Leistungen
+              </a>
             </div>
-
-            {/* ===== RIGHT SIDE (optional leer oder später für Animationen) ===== */}
-            <div className="hero-right">
-              {/* absichtlich leer → sorgt für sauberes Layout */}
-            </div>
-
           </div>
 
+          <div className="hero-right">
+            <div className="hero-preview">
+              <div className="hero-preview-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <img
+                src={sammel1}
+                alt="Projektvorschau einer individuell entwickelten Software"
+              />
+
+              <div className="hero-preview-label">
+                React · Electron · FastAPI
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
-
-      {/* ============================= */}
-      {/* ===== IMAGE SECTION ===== */}
-      {/* ============================= */}
-      {/* <section className="hero-images-section">
-
-        <div className="hero-images-container">
-
-    
-          <img
-            src={klu}
-            alt="Projekt Vorschau 1"
-            className="hero-image-card"
-          />
-
-         
-          <img
-            src={frw2}
-            alt="Projekt Vorschau 2"
-            className="hero-image-card"
-          />
-
-        </div>
-
-      </section> */}
-    </>
+      </div>
+    </section>
   );
 };
 

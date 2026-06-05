@@ -27,6 +27,11 @@
   color: #94a3b8;
 }
 
+.footer-col p {
+  margin: 0;
+  line-height: 1.5;
+}
+
 /* ===== Links ===== */
 .footer-list {
   list-style: none;
@@ -46,10 +51,19 @@
 .footer a:hover {
   color: #6366f1;
 }
+
+.footer-mail {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  color: #cbd5f5;
+  line-height: 1.5;
+}
+
 .footer-socials {
-  margin-top: 20px;
+  margin-top: 18px;
   display: flex;
-  gap: 14px;
+  gap: 12px;
 }
 
 .footer-socials a {
@@ -76,15 +90,25 @@
   transform: translateY(-3px);
 }
 
-.footer-socials a:nth-child(1):hover {
-  color: #e1306c; /* Instagram */
+.footer-socials .footer-whatsapp {
+  color: #86efac;
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.footer-socials .footer-whatsapp:hover {
+  color: #ffffff;
+  background: rgba(34, 197, 94, 0.22);
 }
 
 .footer-socials a:nth-child(2):hover {
-  color: #0077b5; /* LinkedIn */
+  color: #e1306c; /* Instagram */
 }
 
 .footer-socials a:nth-child(3):hover {
+  color: #0077b5; /* LinkedIn */
+}
+
+.footer-socials a:nth-child(4):hover {
   color: #ffffff; /* GitHub */
 }
 /* ===== Bottom ===== */
@@ -107,6 +131,11 @@
   .footer-grid {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  .footer-whatsapp {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 

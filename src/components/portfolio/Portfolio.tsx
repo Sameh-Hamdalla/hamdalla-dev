@@ -11,67 +11,78 @@ import sammel2 from "../../assets/sammel2.png";
 import sammel3 from "../../assets/sammel3.png";
 import sammel4 from "../../assets/sammel4.png";
 
+const techBadges = [
+  { label: "React", className: "tech-react" },
+  { label: "JavaScript", className: "tech-js" },
+  { label: "TypeScript", className: "tech-ts" },
+  { label: "HTML", className: "tech-html" },
+  { label: "CSS", className: "tech-css" },
+  { label: "Python", className: "tech-python" },
+  { label: "FastAPI", className: "tech-fastapi" },
+  { label: "Git", className: "tech-git" },
+  { label: "SQLite", className: "tech-sqlite" },
+  { label: "Electron", className: "tech-electron" },
+  { label: "Vite", className: "tech-vite" },
+  { label: "Tailwind", className: "tech-tailwind" },
+];
 
-// =============================
-// 🔹 PROJEKTDATEN
-// =============================
 const projects = [
   {
     title: "Sammelzentrum Desktop Version",
     category: "Desktop Software",
     image: sammel1,
     gallery: [sammel1, sammel2, sammel3, sammel4],
+    technologies: ["React", "Electron", "FastAPI", "SQLite"],
     description:
-      "Individuell entwickelte Desktop-Anwendung für die Sammelzentrale Aktion Hoffnung Laupheim. Die Software ermöglicht die Verwaltung von Projekten, Trägerorganisationen und Ansprechpartnern. Enthalten sind Such- und Filterfunktionen, PDF- und Excel-Export, Statistiken, Datensicherung sowie eine lokale Datenbank. Entwickelt mit React, Electron und FastAPI."
-    // site: "https://marsaalam-yassin-taxi.vercel.app/"
+      "Individuell entwickelte Desktop-Anwendung für die Sammelzentrale Aktion Hoffnung Laupheim. Die Software ermöglicht die Verwaltung von Projekten, Trägerorganisationen und Ansprechpartnern. Enthalten sind Such- und Filterfunktionen, PDF- und Excel-Export, Statistiken, Datensicherung sowie eine lokale Datenbank.",
   },
-    {
+  {
     title: "Taxi Unternehmen",
     category: "Unternehmenswebsite",
     image: taxi,
+    technologies: ["HTML", "CSS", "JavaScript"],
     description:
-      "Eine übersichtliche Unternehmenswebsite für ein Taxiunternehmen mit klaren Informationen, direkter Kontaktmöglichkeit und responsivem Aufbau. Umgesetzt mit HTML, CSS und JavaScript.",
-    site: "https://marsaalam-yassin-taxi.vercel.app/"
+      "Eine übersichtliche Unternehmenswebsite für ein Taxiunternehmen mit klaren Informationen, direkter Kontaktmöglichkeit und responsivem Aufbau.",
+    site: "https://marsaalam-yassin-taxi.vercel.app/",
   },
   {
     title: "Restaurant Pizzeria HAMHAM",
     category: "Individualsoftware",
     image: pizza,
+    technologies: ["React", "HTML", "CSS", "JavaScript"],
     description:
-      "Eine moderne Restaurant-Website mit digitaler Speisekarte, ansprechender Präsentation und nutzerfreundlicher Bedienung auf allen Geräten. Entwickelt mit React, HTML, CSS und JavaScript.",
-    site: "https://restaurant-pizzeria-hamham.vercel.app/"
+      "Eine moderne Restaurant-Website mit digitaler Speisekarte, ansprechender Präsentation und nutzerfreundlicher Bedienung auf allen Geräten.",
+    site: "https://restaurant-pizzeria-hamham.vercel.app/",
   },
-   {
+  {
     title: "Friseur Buchungssystem",
     category: "Individualsoftware",
     image: salon,
+    technologies: ["React", "HTML", "CSS", "JavaScript"],
     description:
-      "Ein digitales Buchungssystem für Friseursalons, mit dem Kunden Dienstleistungen entdecken und Termine einfach anfragen können. Erstellt mit React, HTML, CSS und JavaScript.",
-    site: "https://friseur-app-phi.vercel.app/"
+      "Ein digitales Buchungssystem für Friseursalons, mit dem Kunden Dienstleistungen entdecken und Termine einfach anfragen können.",
+    site: "https://friseur-app-phi.vercel.app/",
   },
-    {
+  {
     title: "WerkMeister",
     category: "Individualsoftware",
     image: werkmeister,
+    technologies: ["React", "Python", "FastAPI", "SQLite"],
     description:
-      "Eine Web-App für Handwerksbetriebe zur strukturierten Verwaltung von Aufträgen, Abläufen und wichtigen Arbeitsinformationen. Frontend mit React, Backend mit Python, FastAPI und SQLite.",
-    site: "https://werk-meister-zeta.vercel.app/"
+      "Eine Web-App für Handwerksbetriebe zur strukturierten Verwaltung von Aufträgen, Abläufen und wichtigen Arbeitsinformationen.",
+    site: "https://werk-meister-zeta.vercel.app/",
   },
   {
     title: "InventarManager-App",
     category: "Individualsoftware",
     image: inventar,
+    technologies: ["React", "Python", "FastAPI", "SQLite"],
     description:
-      "Eine Inventarverwaltung für Unternehmen, um Produkte, Bestände und wichtige Daten zentral, schnell und zuverlässig zu organisieren. Frontend mit React, Backend mit Python, FastAPI und SQLite.",
-    site: "https://inventar-manager-frontend.vercel.app/inventar"
+      "Eine Inventarverwaltung für Unternehmen, um Produkte, Bestände und wichtige Daten zentral, schnell und zuverlässig zu organisieren.",
+    site: "https://inventar-manager-frontend.vercel.app/inventar",
   },
- 
 ];
 
-
-// =============================
-// 🔹 COMPONENT
-// =============================
 const ProjectCarousel = ({
   images,
   title,
@@ -109,6 +120,7 @@ const ProjectCarousel = ({
         src={images[activeImage]}
         alt={`${title} Screenshot ${activeImage + 1}`}
         className="portfolio-image"
+        loading="lazy"
       />
 
       <button
@@ -128,73 +140,72 @@ const ProjectCarousel = ({
 };
 
 const Portfolio: React.FC = () => {
-
   return (
     <section id="portfolio" className="portfolio">
+      <div className="portfolio-tech-cloud" aria-hidden="true">
+        {techBadges.map((tech, index) => (
+          <span
+            key={tech.label}
+            className={`tech-badge ${tech.className}`}
+            style={{ "--i": index } as React.CSSProperties}
+          >
+            {tech.label}
+          </span>
+        ))}
+      </div>
 
       <div className="portfolio-container">
-
-        {/* HEADER */}
         <div className="portfolio-head">
           <h2 className="portfolio-kicker">Referenzen</h2>
           <h3 className="portfolio-title">Beispielprojekte</h3>
         </div>
 
-        {/* GRID */}
         <div className="portfolio-grid">
+          {projects.map((project) => (
+            <div key={project.title} className="portfolio-card">
+              <h4 className="portfolio-project-title">{project.title}</h4>
 
-          {projects.map((p, i) => (
-
-            <div key={i} className="portfolio-card">
-
-              {/* 🔥 TITEL JETZT GANZ OBEN */}
-              <h4 className="portfolio-project-title">
-                {p.title}
-              </h4>
-
-              {/* Kategorie */}
               <span className="portfolio-category-top">
-                {p.category}
+                {project.category}
               </span>
 
               <p className="portfolio-description">
-                {p.description}
+                {project.description}
               </p>
 
-              {/* 🔥 BILD + OVERLAY */}
-              {p.gallery ? (
-                 <ProjectCarousel images={p.gallery} title={p.title} />
+              <div className="portfolio-tech-list">
+                {project.technologies.map((tech) => (
+                  <span key={tech}>{tech}</span>
+                ))}
+              </div>
+
+              {project.gallery ? (
+                <ProjectCarousel images={project.gallery} title={project.title} />
               ) : (
                 <a
-                  href={p.site}
+                  href={project.site}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="portfolio-image-box"
-              >
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="portfolio-image"
+                    loading="lazy"
+                  />
 
-                <img
-                  src={p.image}
-                  alt={p.title}
-                  className="portfolio-image"
-                />
-
-                {/* 🔥 OVERLAY */}
-                <div className="portfolio-overlay">
-                  <span className="portfolio-overlay-text">
-                    Projekt ansehen
-                  </span>
-                </div>
-
-              </a>
+                  <div className="portfolio-overlay">
+                    <span className="portfolio-overlay-text">
+                      Projekt ansehen
+                    </span>
+                  </div>
+                </a>
               )}
 
-              {/* Divider */}
               <div className="portfolio-divider" />
-
             </div>
-
           ))}
-
         </div>
       </div>
     </section>
