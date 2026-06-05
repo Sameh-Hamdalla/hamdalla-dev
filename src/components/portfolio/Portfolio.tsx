@@ -105,6 +105,7 @@ const ProjectCarousel = ({
       </button>
 
       <img
+        key={images[activeImage]}
         src={images[activeImage]}
         alt={`${title} Screenshot ${activeImage + 1}`}
         className="portfolio-image"

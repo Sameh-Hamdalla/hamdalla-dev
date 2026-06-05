@@ -241,6 +241,19 @@ const Contact: React.FC = () => {
                 />
               </div>
 
+              <div className="privacy-row">
+                <input
+                  type="checkbox"
+                  id="privacy"
+                  name="privacy"
+                  required
+                />
+                <label htmlFor="privacy" className="privacy-label">
+                  Ich stimme der Verarbeitung meiner Daten zu. <br />
+                  (Datenschutzerklärung lesen)
+                </label>
+              </div>
+
               {/* Submit Button */}
               <button type="submit" className="submit-btn">
                 Anfrage absenden

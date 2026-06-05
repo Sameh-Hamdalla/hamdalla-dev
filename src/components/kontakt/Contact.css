@@ -183,6 +183,26 @@ textarea:focus {
   background: white;
 }
 
+.privacy-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.privacy-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.privacy-label {
+  margin-bottom: 0;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
 /* ===== Button ===== */
 .submit-btn {
   display: inline-block;
