@@ -8,6 +8,7 @@ import Portfolio from "./components/portfolio/Portfolio";
 import AIConsultant from "./components/Services/AIConsultant";
 import Contact from "./components/kontakt/Contact";
 import Footer from "./components/footer/Footer";
+import Termin from "./components/Termin/termin";
 import ScrollToTop from "./ScrollToTop";
 
 import Impressum from "./components/pages/impressum";
@@ -49,6 +50,7 @@ const App: React.FC = () => {
             }
           />
 
+          <Route path="/termin" element={<Termin />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
         </Routes>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./header.css";
 import logo2 from "../../assets/logo2.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import ScrollToTop from "@/src/ScrollToTop";
 
 const Header: React.FC = () => {
@@ -86,6 +86,10 @@ const Header: React.FC = () => {
                 Kontakt
               </a>
 
+              <NavLink to="/termin">
+                Termin vereinbaren
+              </NavLink>
+
             </nav>
 
             {/* ============================= */}
@@ -122,6 +126,10 @@ const Header: React.FC = () => {
                 <a href="/#contact" onClick={handleCloseMenu}>
                   Kontakt
                 </a>
+
+                <Link to="/termin" onClick={handleCloseMenu}>
+                  Termin vereinbaren
+                </Link>
 
                 <a
                   href="/#contact"
